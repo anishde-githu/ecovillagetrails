@@ -1,0 +1,125 @@
+{
+  "generatedAt": null,
+  "updates": [
+    {
+      "id": "seed_1",
+      "icon": "📰",
+      "title": "Kaziranga Safari Bookings Open",
+      "summary": "Bookings for the upcoming safari season are now available online. Visitors can choose morning or afternoon elephant and jeep safaris.",
+      "category": "Tourism News",
+      "state": "Assam",
+      "location": "Kaziranga National Park",
+      "date": "Today",
+      "importance": "high",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_2",
+      "icon": "🎉",
+      "title": "Hornbill Festival Dates Announced",
+      "summary": "Nagaland's flagship cultural festival returns with tribal dance, music, and food stalls celebrating the state's indigenous heritage.",
+      "category": "Festivals",
+      "state": "Nagaland",
+      "location": "Kisama Heritage Village",
+      "date": "This week",
+      "importance": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_3",
+      "icon": "🌦",
+      "title": "Heavy Rain Alert for Western Ghats",
+      "summary": "The weather department has issued an orange alert for hill stations in the region. Trekkers are advised to check conditions before heading out.",
+      "category": "Weather Alerts",
+      "state": "Kerala",
+      "location": "Munnar",
+      "date": "Today",
+      "importance": "high",
+      "priority": "high"
+    },
+    {
+      "id": "seed_4",
+      "icon": "🚧",
+      "title": "Landslide Closes Manali-Leh Highway Stretch",
+      "summary": "A section of the highway is temporarily closed for debris clearance. Alternate routes are being used for essential traffic.",
+      "category": "Travel Advisories",
+      "state": "Himachal Pradesh",
+      "location": "Manali",
+      "date": "This week",
+      "importance": "high",
+      "priority": "high"
+    },
+    {
+      "id": "seed_5",
+      "icon": "🌱",
+      "title": "New Homestay Cluster Promotes Eco Tourism",
+      "summary": "A village cooperative has launched eco-friendly homestays focused on organic farming tours and low-impact travel.",
+      "category": "Eco Tourism",
+      "state": "Meghalaya",
+      "location": "Mawlynnong",
+      "date": "This week",
+      "importance": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_6",
+      "icon": "🐘",
+      "title": "Elephant Corridor Restrictions in Effect",
+      "summary": "Forest authorities have restricted vehicle movement during dusk hours to reduce human-elephant conflict near the reserve.",
+      "category": "Wildlife",
+      "state": "Karnataka",
+      "location": "Bandipur",
+      "date": "Today",
+      "importance": "high",
+      "priority": "high"
+    },
+    {
+      "id": "seed_7",
+      "icon": "🏞",
+      "title": "Jim Corbett Extends Visiting Hours",
+      "summary": "The park has extended gate timings for the peak season, giving visitors more time for morning and evening safaris.",
+      "category": "National Parks",
+      "state": "Uttarakhand",
+      "location": "Jim Corbett National Park",
+      "date": "This week",
+      "importance": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_8",
+      "icon": "🚆",
+      "title": "New Tourist Train Route Launched",
+      "summary": "A scenic new rail route connecting key heritage towns has begun operations, with vista-dome coaches for sightseeing.",
+      "category": "Transport Updates",
+      "state": "Rajasthan",
+      "location": "Udaipur",
+      "date": "This week",
+      "importance": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_9",
+      "icon": "🏨",
+      "title": "Beachside Resorts Offer Monsoon Discounts",
+      "summary": "Several resorts are offering reduced off-season rates for the monsoon period, bundled with local sightseeing packages.",
+      "category": "Hotel & Stay",
+      "state": "Goa",
+      "location": "Goa",
+      "date": "Today",
+      "importance": "low",
+      "priority": "normal"
+    },
+    {
+      "id": "seed_10",
+      "icon": "🎭",
+      "title": "Classical Dance Festival Returns to Khajuraho",
+      "summary": "The week-long festival showcases classical Indian dance forms against the backdrop of the historic temple complex.",
+      "category": "Cultural Events",
+      "state": "Madhya Pradesh",
+      "location": "Khajuraho",
+      "date": "This week",
+      "importance": "medium",
+      "priority": "normal"
+    }
+  ]
+}

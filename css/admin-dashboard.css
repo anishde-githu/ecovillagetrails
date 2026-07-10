@@ -1,0 +1,4 @@
+.admin-listing{display:flex;gap:20px;padding:22px;border:1px solid var(--line);border-radius:var(--radius-md);background:#fff;margin-bottom:16px;flex-wrap:wrap;}
+  .admin-thumb-row{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap;}
+  .admin-thumb-row img{width:70px;height:56px;object-fit:cover;border-radius:8px;}
+  .admin-offerings{font-size:.82rem;color:var(--ink-soft);margin-top:6px;}

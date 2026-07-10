@@ -1,0 +1,45 @@
+/* =====================================================================
+   css/partner-cards.css
+   Styles for the homepage partner sections (Hotels / Travel Agents /
+   Local Guides) rendered by js/homepage-listings.js.
+   ===================================================================== */
+
+.partner-section{padding:70px 20px;max-width:1200px;margin:auto;}
+.partner-section h2{text-align:center;color:#2d6a4f;margin-bottom:6px;}
+.partner-section .partner-sub{text-align:center;color:#666;margin-bottom:32px;}
+
+.pl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
+
+.pl-card{
+  display:block;background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);text-decoration:none;color:inherit;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.pl-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.12);}
+
+.pl-card-img{
+  height:170px;background-size:cover;background-position:center;background-color:#eef3ee;
+  display:flex;align-items:center;justify-content:center;
+}
+.pl-card-icon{font-size:2.4rem;opacity:.5;}
+
+.pl-card-body{padding:18px 20px;}
+.pl-card-tag{font-size:.72rem;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.05em;}
+.pl-card-body h3{font-size:1.1rem;margin:8px 0 4px;color:#1e1e1e;}
+.pl-card-body p{font-size:.85rem;color:#666;margin:0 0 12px;min-height:1.2em;}
+.pl-card-foot{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:#555;}
+.pl-card-foot strong{color:#2d6a4f;}
+
+.pl-empty{grid-column:1/-1;text-align:center;color:#888;padding:30px;}
+
+/* skeleton loading state */
+.pl-skeleton .pl-card-img{background:linear-gradient(90deg,#eee 25%,#f6f6f6 37%,#eee 63%);background-size:400% 100%;animation:plShimmer 1.4s ease infinite;}
+.pl-skel-line{height:12px;border-radius:6px;background:linear-gradient(90deg,#eee 25%,#f6f6f6 37%,#eee 63%);background-size:400% 100%;animation:plShimmer 1.4s ease infinite;margin-bottom:8px;}
+.pl-skel-line.short{width:40%;}
+@keyframes plShimmer{0%{background-position:100% 50%;}100%{background-position:0 50%;}}
+
+/* nav "become a partner" button - add class="partner-cta" to your existing nav link/button */
+.partner-cta{
+  background:#2d6a4f;color:#fff !important;padding:8px 18px;border-radius:30px;
+  font-weight:600;font-size:.85rem;
+}

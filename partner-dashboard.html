@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Dashboard — EcoVillage Trails</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/partners.css">
+<link rel="stylesheet" href="css/partner-dashboard.css">
+
+</head>
+<body class="partners-body">
+
+<header class="p-topbar">
+  <div class="p-container p-topbar-inner">
+    <a href="index.html" class="p-logo">🌿 EcoVillage Trails</a>
+    <div class="p-topbar-right">
+      <span id="whoami"></span>
+      <a href="index.html">Visit site</a>
+      <a href="#" id="logoutLink">Log out</a>
+    </div>
+  </div>
+</header>
+
+<main class="p-page">
+  <div class="p-container">
+
+    <div class="dash-header">
+      <div>
+        <h1 id="dashTitle" style="font-size:1.7rem;">Your listing</h1>
+        <p style="color:var(--ink-soft);margin-top:4px;" id="dashSub"></p>
+      </div>
+      <span id="statusBadge"></span>
+    </div>
+
+    <div id="rejectNote" class="p-reject-note" style="display:none;"></div>
+
+    <div class="dash-tabs">
+      <button class="dash-tab-btn active" data-panel="details">Listing details</button>
+      <button class="dash-tab-btn" data-panel="images">Photos</button>
+      <button class="dash-tab-btn" data-panel="bookings">Enquiries</button>
+    </div>
+
+    <div id="alertBox" class="p-alert"></div>
+
+    <!-- DETAILS PANEL -->
+    <div class="dash-panel active" id="panel-details">
+      <div class="p-card">
+        <form id="listingForm">
+          <div class="p-field">
+            <label for="fName">Listing name</label>
+            <input id="fName" required placeholder="e.g. Mud Cottage Homestay">
+          </div>
+          <div class="p-field">
+            <label for="fTagline">Tagline</label>
+            <input id="fTagline" placeholder="e.g. Red Earth & Chhau Masks">
+          </div>
+          <div class="p-field">
+            <label for="fDescription">Description</label>
+            <textarea id="fDescription" rows="4" required placeholder="Tell visitors what makes this special..."></textarea>
+          </div>
+          <div class="p-row">
+            <div class="p-field">
+              <label for="fRegion">Region</label>
+              <input id="fRegion" required placeholder="e.g. Purulia, Sundarbans">
+            </div>
+            <div class="p-field">
+              <label for="fPhone">Contact phone</label>
+              <input id="fPhone" placeholder="e.g. +91 98765 43210">
+            </div>
+          </div>
+          <div class="p-field">
+            <label for="fEmail">Contact email</label>
+            <input id="fEmail" type="email" placeholder="bookings@yourbusiness.com">
+          </div>
+          <div class="p-field">
+            <label for="fAmenities">Amenities / highlights (comma separated)</label>
+            <input id="fAmenities" placeholder="Solar Power, Organic Meals, Free Wi-Fi">
+          </div>
+
+          <h3 style="font-size:1.05rem;margin:24px 0 6px;" id="offeringsLabel">Rooms</h3>
+          <p style="color:var(--ink-soft);font-size:.82rem;margin-bottom:12px;" id="offeringsSub"></p>
+          <div id="offeringsList"></div>
+          <button type="button" class="p-btn p-btn-ghost" id="addOfferingBtn" style="margin-bottom:20px;">+ Add</button>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button type="submit" class="p-btn p-btn-primary" id="saveBtn">Save & submit for review</button>
+            <button type="button" class="p-btn p-btn-danger" id="deleteBtn" style="display:none;">Delete listing</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- IMAGES PANEL -->
+    <div class="dash-panel" id="panel-images">
+      <div class="p-card">
+        <p style="color:var(--ink-soft);font-size:.88rem;margin-bottom:14px;">Save your listing details first, then add up to 8 photos. Click a photo to make it the cover image shown on the homepage card.</p>
+        <div class="p-image-grid" id="imageGrid"></div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple style="margin-top:10px;">
+        <div style="margin-top:14px;">
+          <button type="button" class="p-btn p-btn-primary" id="uploadBtn">Upload photos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOKINGS PANEL -->
+    <div class="dash-panel" id="panel-bookings">
+      <div class="p-card">
+        <div id="bookingsList"><p class="p-empty">Loading enquiries...</p></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/partners-api.js"></script>
+<script src="js/partner-dashboard.js"></script>
+
+</body>
+</html>

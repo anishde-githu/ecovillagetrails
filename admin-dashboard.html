@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — EcoVillage Trails</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/partners.css">
+<link rel="stylesheet" href="css/admin-dashboard.css">
+
+</head>
+<body class="partners-body">
+
+<header class="p-topbar">
+  <div class="p-container p-topbar-inner">
+    <a href="index.html" class="p-logo">🌿 EcoVillage Trails — Admin</a>
+    <div class="p-topbar-right">
+      <span id="whoami"></span>
+      <a href="#" id="logoutLink">Log out</a>
+    </div>
+  </div>
+</header>
+
+<main class="p-page">
+  <div class="p-container">
+    <h1 style="font-size:1.6rem;margin-bottom:20px;">Listing approvals</h1>
+
+    <div class="p-chip-row" id="statusChips">
+      <button class="p-chip active" data-status="pending">Pending</button>
+      <button class="p-chip" data-status="approved">Approved</button>
+      <button class="p-chip" data-status="rejected">Rejected</button>
+      <button class="p-chip" data-status="">All</button>
+    </div>
+    <div class="p-chip-row" id="categoryChips">
+      <button class="p-chip active" data-category="">All categories</button>
+      <button class="p-chip" data-category="hotel">🏨 Hotels</button>
+      <button class="p-chip" data-category="agent">🧳 Travel Agents</button>
+      <button class="p-chip" data-category="guide">🧭 Local Guides</button>
+    </div>
+
+    <div id="alertBox" class="p-alert"></div>
+    <div id="listingsContainer"><p class="p-empty">Loading...</p></div>
+  </div>
+</main>
+
+<script src="js/partners-api.js"></script>
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

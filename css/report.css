@@ -1,0 +1,233 @@
+:root{
+  --bg-warm:#fdf9f1;
+  --ink:#142922;
+  --ink-soft:#52645b;
+  --green-deep:#0f5c3d;
+  --green:#1f8a5a;
+  --green-light:#7bc97e;
+  --peach:#fbe8d9;
+  --peach-line:#f0c9a3;
+  --orange:#e1672e;
+  --orange-light:#f6a06b;
+  --yellow:#f0ad2e;
+  --yellow-light:#f8d27a;
+  --line:rgba(20,41,34,0.12);
+  --radius-lg:26px;
+  --radius-md:18px;
+  --shadow:0 24px 60px -24px rgba(18,38,30,.22);
+  --shadow-sm:0 10px 30px -12px rgba(18,38,30,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;color:var(--ink);background:var(--bg-warm);}
+.container{max-width:1240px;margin:0 auto;padding:0 28px;}
+h1,h2,h3{font-family:'Fraunces',serif;}
+a{color:inherit;}
+
+/* ---------------- TOP BAR ---------------- */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 28px;background:#fff;border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:40;
+}
+.topbar a.logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink);}
+.topbar a.back{
+  font-family:'Space Mono',monospace;font-size:.76rem;text-decoration:none;color:var(--green-deep);
+  border:1px solid var(--green-deep);padding:8px 16px;border-radius:999px;
+}
+.topbar a.back:hover{background:var(--green-deep);color:#fff;}
+
+.empty-state{text-align:center;padding:120px 20px;color:var(--ink-soft);}
+.empty-state a{color:var(--green-deep);font-weight:600;}
+
+/* =========================================================
+   ZONE 1 — DASHBOARD (inspired by "My Travel Plan")
+========================================================= */
+.zone1-banner{
+  position:relative;overflow:hidden;padding:70px 28px 60px;
+  background:linear-gradient(180deg,#eaf6f4 0%,#dcefe9 60%,#cfe9df 100%);
+  text-align:center;
+}
+.zone1-banner svg.deco{position:absolute;inset:0;width:100%;height:100%;opacity:.5;}
+.zone1-banner h1{
+  position:relative;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;color:var(--green-deep);
+  font-weight:600;
+}
+.zone1-banner h1 em{font-style:italic;color:var(--orange);}
+.zone1-banner p{position:relative;margin-top:16px;color:var(--ink-soft);font-size:1.05rem;}
+
+.stat-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin:-40px auto 40px;position:relative;max-width:1180px;padding:0 28px;
+}
+@media(max-width:900px){.stat-row{grid-template-columns:repeat(2,1fr);}}
+.stat-card{
+  background:#fff;border-radius:var(--radius-md);padding:20px 22px;box-shadow:var(--shadow-sm);
+  border:1px solid var(--line);
+}
+.stat-card .label{font-family:'Space Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+.stat-card .value{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;margin-top:6px;color:var(--green-deep);}
+
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+@media(max-width:900px){.dash-grid{grid-template-columns:1fr;}}
+.panel{
+  background:#fff;border-radius:var(--radius-md);border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.panel-head{
+  background:var(--green);color:#fff;padding:12px 20px;font-weight:600;font-size:.92rem;
+  letter-spacing:.02em;
+}
+.panel-body{padding:18px 20px;}
+.kv-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem;}
+.kv-row:last-child{border-bottom:none;}
+.kv-row b{font-weight:600;}
+
+.donut-wrap{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center;padding:8px 0;}
+.donut{
+  width:170px;height:170px;border-radius:50%;position:relative;flex-shrink:0;
+  background:conic-gradient(
+    var(--green-deep) 0% 30%,
+    var(--green) 30% 55%,
+    var(--yellow) 55% 75%,
+    var(--orange) 75% 90%,
+    var(--green-light) 90% 100%
+  );
+}
+.donut::after{
+  content:"";position:absolute;inset:24px;border-radius:50%;background:#fff;
+}
+.donut-legend{display:flex;flex-direction:column;gap:8px;font-size:.86rem;}
+.donut-legend span.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;}
+
+.budget-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.budget-table th{text-align:left;font-family:'Space Mono',monospace;font-size:.68rem;text-transform:uppercase;color:var(--ink-soft);padding:8px 10px;border-bottom:2px solid var(--line);}
+.budget-table td{padding:9px 10px;border-bottom:1px solid var(--line);}
+.budget-table tr:last-child td{border-bottom:none;}
+
+.bar-compare{margin-top:10px;}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.bar-row .bar-label{width:70px;font-size:.82rem;font-weight:600;flex-shrink:0;}
+.bar-track{flex:1;background:var(--bg-warm);border-radius:8px;height:16px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:8px;}
+
+/* =========================================================
+   ZONE 2 — ITINERARY (inspired by "Trip Planner")
+========================================================= */
+.zone2-hero{
+  position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255,255,255,.25), transparent 55%),
+    linear-gradient(135deg, var(--green-deep) 0%, var(--green) 55%, var(--yellow) 130%);
+  overflow:hidden;margin-top:10px;
+}
+.zone2-hero::before, .zone2-hero::after{
+  content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12);
+}
+.zone2-hero::before{width:260px;height:260px;top:-90px;left:-60px;}
+.zone2-hero::after{width:200px;height:200px;bottom:-80px;right:-40px;}
+.zone2-hero h2{
+  position:relative;color:#fff;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;
+  font-weight:700;text-transform:uppercase;text-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+.section-pad{padding:48px 28px;}
+.section-label{
+  font-family:'Space Mono',monospace;text-transform:uppercase;font-size:.74rem;letter-spacing:.08em;
+  color:var(--green-deep);margin-bottom:8px;
+}
+.section-title2{font-size:1.7rem;font-weight:600;margin-bottom:26px;}
+
+.day-row{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px;margin-bottom:46px;}
+.day-card{
+  flex:0 0 260px;background:var(--peach);border:1px solid var(--peach-line);
+  border-radius:var(--radius-md);padding:20px;
+}
+.day-card h3{color:var(--orange);font-size:1.15rem;margin-bottom:14px;}
+.day-card ul{list-style:none;}
+.day-card li{
+  display:flex;gap:8px;padding:7px 0;border-bottom:1px dashed var(--peach-line);font-size:.88rem;
+}
+.day-card li:last-child{border-bottom:none;}
+.day-card li b{color:var(--green-deep);white-space:nowrap;}
+
+.info-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:46px;}
+@media(max-width:900px){.info-grid3{grid-template-columns:1fr;}}
+.info-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.info-card .head{padding:16px 20px;font-weight:600;display:flex;align-items:center;gap:10px;font-size:1rem;}
+.info-card .head.green{background:var(--green-deep);color:#fff;}
+.info-card .head.orange{background:var(--orange);color:#fff;}
+.info-card .head.yellow{background:var(--yellow);color:#fff;}
+.info-card .body{padding:18px 20px;font-size:.9rem;color:var(--ink-soft);line-height:1.6;}
+.info-card .body ul{margin-left:18px;}
+.info-card .body li{margin-bottom:6px;}
+.info-card.clickable{cursor:pointer;transition:transform .2s;}
+.info-card.clickable:hover{transform:translateY(-4px);}
+
+.two-col{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-bottom:10px;}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;}}
+.notes-card, .stay-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);padding:22px 24px;
+}
+.notes-card h4, .stay-card h4{margin-bottom:12px;font-size:1.05rem;}
+.notes-card ul{margin-left:18px;color:var(--ink-soft);font-size:.9rem;line-height:1.7;}
+
+/* =========================================================
+   ZONE 3 — ACTION PANEL (inspired by dark app mockup)
+========================================================= */
+.zone3{background:var(--green-deep);padding:60px 28px 70px;color:#fff;}
+.zone3 .section-label{color:var(--yellow-light);}
+.zone3 h2{color:#fff;margin-bottom:30px;font-size:1.8rem;}
+.action-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:1000px){.action-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.action-grid{grid-template-columns:1fr;}}
+.action-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius-md);padding:24px 20px;text-align:center;cursor:pointer;
+  transition:transform .2s, background .2s;
+}
+.action-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.12);}
+.action-card .icon{font-size:1.8rem;margin-bottom:12px;}
+.action-card .title{font-weight:600;margin-bottom:6px;}
+.action-card .sub{font-size:.8rem;color:rgba(255,255,255,.7);}
+
+.art-title{margin-top:50px;}
+.art-list{margin:0 0 20px 20px;color:rgba(255,255,255,.85);font-size:.92rem;}
+.art-list li{margin-bottom:6px;}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+.art-btn{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;
+  border-radius:var(--radius-md);padding:20px;font-size:.86rem;cursor:pointer;text-align:center;
+  transition:.2s;
+}
+.art-btn:hover{background:rgba(255,255,255,.16);transform:translateY(-3px);}
+
+.bottom-actions{display:flex;justify-content:center;gap:16px;margin-top:50px;flex-wrap:wrap;}
+.pill-btn{
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:.94rem;
+  border:none;border-radius:999px;padding:15px 30px;cursor:pointer;color:#fff;
+}
+.pill-btn.chat{background:var(--orange);}
+.pill-btn.pdf{background:#fff;color:var(--green-deep);}
+.pill-btn:hover{opacity:.88;}
+
+/* ---- modal ---- */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(15,25,28,.6);
+  display:none;align-items:center;justify-content:center;z-index:50;padding:20px;
+}
+.modal-overlay.show{display:flex;}
+.modal-box{
+  background:#fff;border-radius:16px;max-width:640px;width:100%;
+  max-height:82vh;overflow-y:auto;padding:36px;position:relative;color:var(--ink);
+}
+.modal-box h2{margin-bottom:16px;color:var(--green-deep);}
+.modal-box p{color:var(--ink-soft);margin-bottom:12px;line-height:1.6;}
+.modal-close{
+  position:absolute;top:18px;right:18px;border:none;background:var(--line);
+  width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;
+}
+.modal-loading{color:var(--ink-soft);font-style:italic;}

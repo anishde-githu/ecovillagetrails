@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoVillage Trails — The Soul </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/live-updates.css">
+<link rel="stylesheet" href="css/partner-cards.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- floating leaves -->
+<div class="leaf-field" aria-hidden="true">
+  <svg class="leaf" viewBox="0 0 24 24" fill="#7bc97e"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.7"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#f0ad2e"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.6"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#2a8fae"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.55"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#7bc97e"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.65"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#e1672e"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.5"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#1f8a5a"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.6"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#f0ad2e"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.55"/></svg>
+  <svg class="leaf" viewBox="0 0 24 24" fill="#2a8fae"><path d="M12 2C7 2 3 7 3 13c0 5 4 9 9 9s9-4 9-9c0-1-3-11-9-11z" opacity="0.5"/></svg>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c5-3 8-7 8-12a8 8 0 0 0-16 0c0 5 3 9 8 12z"/><path d="M12 13c2-1 3-3 3-5"/></svg>
+      EcoVillage Trails
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="report.html">AI Planner</a></li>
+      <li><a href="partner-auth.html">List Your Business</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#stays" class="btn btn-ghost btn-small">Book Your Stay</a>
+      <a href="partner-auth.html" class="btn btn-primary btn-small">List Your Business</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+
+    <!-- Background Video -->
+    <div class="hero-illustration">
+        <video
+            class="hero-bg-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/hero-poster.jpg">
+
+            <source src="assets/coverved.mp4" type="video/mp4">
+
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="hero-content">
+
+        <!-- Left Content -->
+        <div class="hero-text reveal">
+
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 21c5-3 8-7 8-12a8 8 0 0 0-16 0c0 5 3 9 8 12z"/>
+                </svg>
+                100% Community-Powered Tourism
+            </div>
+
+            <h1>
+                Experience the <em>Soul</em> 
+            </h1>
+
+            <p class="lede">
+                Stay with local families, explore authentic culture,
+                and support sustainable communities across Purulia,
+                Andul, the Sundarbans and beyond.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#destinations" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                    Explore Villages
+                </a>
+
+                <a href="#stays" class="btn btn-ghost">
+                    Book Your Stay
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <b>12</b>
+                    <span>Partner Villages</span>
+                </div>
+
+                <div class="hero-stat">
+                    <b>340+</b>
+                    <span>Host Families</span>
+                </div>
+
+                <div class="hero-stat">
+                    <b>100%</b>
+                    <span>Renewable-Powered Stays</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-visual reveal">
+
+    <div class="hero-card">
+
+        <div class="vision-glass">
+
+            <h3 class="vision-title">Experience Timeline</h3>
+
+            <div class="vision-item">
+                <span class="time">Lorem 10:00 AM</span>
+                <span class="text">Arrival & Welcome Ceremony</span>
+            </div>
+
+            <div class="vision-divider"></div>
+
+            <div class="vision-item">
+                <span class="time">Lorem 11:30 AM</span>
+                <span class="text">Forest Walk & Exploration</span>
+            </div>
+
+            <div class="vision-divider"></div>
+
+            <div class="vision-item">
+                <span class="time">Lorem 01:00 PM</span>
+                <span class="text">Traditional Lunch Experience</span>
+            </div>
+
+            <div class="vision-divider"></div>
+
+            <div class="vision-item">
+                <span class="time">Lorem 03:00 PM</span>
+                <span class="text">Cultural Showcase & Crafts</span>
+            </div>
+
+        </div>
+
+        <video class="hero-video"
+            autoplay muted loop playsinline preload="auto">
+            <source src="assets/your-video.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+    <!-- Background Video -->
+    <video class="hero-card-video"
+        autoplay muted loop playsinline preload="auto"
+        poster="assets/card-poster.jpg">
+
+        <source src="assets/your-video.mp4" type="video/mp4">
+    </video>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<!-- ===================== AI PLANNER ===================== -->
+<section class="section" id="planner">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow orange">AI Planner</div>
+      <h2 class="section-title">Plan your journey with Smart Travel AI</h2>
+      <p class="section-sub">Answer a few questions about who's travelling and what you love, and our AI will draft a personalized, sustainable itinerary.</p>
+    </div>
+
+<div class="planner" id="plannerWizard">
+
+  <!-- STICKY PROGRESS BAR -->
+  <div class="wizard-progress">
+    <div class="wizard-progress-track">
+      <div class="wizard-progress-fill" id="progressFill"></div>
+    </div>
+    <div class="wizard-steps" id="progressSteps"><!-- filled by JS --></div>
+  </div>
+
+  <div class="wizard-card">
+    <form id="plannerForm" novalidate>
+
+      <!-- STEP 1 — TRAVELLER INFORMATION -->
+      <div class="wizard-step active" data-step="1">
+        <h3>🧑 Traveller Information</h3>
+        <p class="step-sub">Tell us a little about yourself.</p>
+        <div class="field-grid">
+          <div class="field" data-field-wrap="fullName">
+            <label>Full Name *</label>
+            <input type="text" id="fullName" placeholder="e.g. Ananya Sharma">
+            <span class="field-error-msg">Please enter your full name.</span>
+          </div>
+          <div class="field" data-field-wrap="email">
+            <label>Email *</label>
+            <input type="email" id="email" placeholder="you@example.com">
+            <span class="field-error-msg">Please enter a valid email.</span>
+          </div>
+          <div class="field" data-field-wrap="mobile">
+            <label>Mobile Number *</label>
+            <input type="tel" id="mobile" placeholder="+91 90071 55435">
+            <span class="field-error-msg">Please enter a valid mobile number.</span>
+          </div>
+          <div class="field" data-field-wrap="nationality">
+            <label>Nationality *</label>
+            <input type="text" id="nationality" placeholder="e.g. Indian">
+            <span class="field-error-msg">Please enter your nationality.</span>
+          </div>
+          <div class="field full" data-field-wrap="ageGroup">
+            <label>Age Group *</label>
+            <div class="chip-group" data-chip-field="ageGroup" data-mode="single"></div>
+            <span class="field-error-msg">Please select your age group.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 — TRIP DETAILS -->
+      <div class="wizard-step" data-step="2">
+        <h3>🧳 Trip Details</h3>
+        <p class="step-sub">Where and when are you headed?</p>
+        <div class="field-grid">
+          <div class="field" data-field-wrap="destination">
+            <label>Destination *</label>
+            <input type="text" id="destination" placeholder="e.g. Ziro Valley, Arunachal Pradesh">
+            <span class="field-error-msg">Please enter a destination.</span>
+          </div>
+          <div class="field" data-field-wrap="startingCity">
+            <label>Starting City *</label>
+            <input type="text" id="startingCity" placeholder="e.g. Kolkata">
+            <span class="field-error-msg">Please enter your starting city.</span>
+          </div>
+          <div class="field" data-field-wrap="travelDate">
+            <label>Travel Date *</label>
+            <input type="date" id="travelDate">
+            <span class="field-error-msg">Please select a travel date.</span>
+          </div>
+          <div class="field" data-field-wrap="returnDate">
+            <label>Return Date *</label>
+            <input type="date" id="returnDate">
+            <span class="field-error-msg">Please select a return date after the travel date.</span>
+          </div>
+          <div class="field" data-field-wrap="days">
+            <label>Number of Days *</label>
+            <input type="number" id="days" min="1" placeholder="e.g. 5">
+            <span class="field-error-msg">Please enter number of days.</span>
+          </div>
+          <div class="field" data-field-wrap="travellers">
+            <label>Number of Travellers *</label>
+            <input type="number" id="travellers" min="1" placeholder="e.g. 4">
+            <span class="field-error-msg">Please enter number of travellers.</span>
+          </div>
+          <div class="field" data-field-wrap="adults">
+            <label>Adults</label>
+            <input type="number" id="adults" min="0" placeholder="0">
+          </div>
+          <div class="field" data-field-wrap="children">
+            <label>Children</label>
+            <input type="number" id="children" min="0" placeholder="0">
+          </div>
+          <div class="field" data-field-wrap="seniors">
+            <label>Senior Citizens</label>
+            <input type="number" id="seniors" min="0" placeholder="0">
+          </div>
+          <div class="field full" data-field-wrap="transport">
+            <label>Preferred Transport *</label>
+            <div class="chip-group" data-chip-field="transport" data-mode="single"></div>
+            <span class="field-error-msg">Please select a mode of transport.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 — BUDGET & STAY -->
+      <div class="wizard-step" data-step="3">
+        <h3>💰 Budget &amp; Stay</h3>
+        <p class="step-sub">Help us match the right comfort level.</p>
+        <div class="field-grid">
+          <div class="field full" data-field-wrap="budget">
+            <label>Budget *</label>
+            <div class="chip-group" data-chip-field="budget" data-mode="single"></div>
+            <span class="field-error-msg">Please select a budget type.</span>
+          </div>
+          <div class="field full" data-field-wrap="accommodation">
+            <label>Accommodation *</label>
+            <div class="chip-group" data-chip-field="accommodation" data-mode="single"></div>
+            <span class="field-error-msg">Please select an accommodation type.</span>
+          </div>
+          <div class="field full" data-field-wrap="food">
+            <label>Food Preference *</label>
+            <div class="chip-group" data-chip-field="food" data-mode="single"></div>
+            <span class="field-error-msg">Please select a food preference.</span>
+          </div>
+          <div class="field full" data-field-wrap="accessibility">
+            <label>Accessibility</label>
+            <div class="chip-group" data-chip-field="accessibility" data-mode="single"></div>
+          </div>
+          <div class="field full" data-field-wrap="fitness">
+            <label>Fitness Level *</label>
+            <div class="chip-group" data-chip-field="fitness" data-mode="single"></div>
+            <span class="field-error-msg">Please select a fitness level.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 — ACTIVITIES -->
+      <div class="wizard-step" data-step="4">
+        <h3>🥾 Activities</h3>
+        <p class="step-sub">Pick as many as you like — there's no limit.</p>
+        <div class="field full" data-field-wrap="activities">
+          <div class="chip-group" data-chip-field="activities" data-mode="multi"></div>
+          <span class="field-error-msg">Please select at least one activity.</span>
+        </div>
+      </div>
+
+      <!-- STEP 5 — INTERESTS -->
+      <div class="wizard-step" data-step="5">
+        <h3>🌤 Interests</h3>
+        <p class="step-sub">A few more preferences to fine-tune your plan.</p>
+        <div class="field-grid">
+          <div class="field full">
+            <label>Eco Interest Level (1 – 5)</label>
+            <div class="slider-wrap">
+              <input type="range" id="ecoInterest" min="1" max="5" value="3">
+              <div class="slider-value" id="ecoInterestValue">3</div>
+            </div>
+          </div>
+          <div class="field full" data-field-wrap="weather">
+            <label>Weather Preference *</label>
+            <div class="chip-group" data-chip-field="weather" data-mode="single"></div>
+            <span class="field-error-msg">Please select a weather preference.</span>
+          </div>
+          <div class="field full" data-field-wrap="schedule">
+            <label>Daily Schedule *</label>
+            <div class="chip-group" data-chip-field="schedule" data-mode="single"></div>
+            <span class="field-error-msg">Please select a daily schedule pace.</span>
+          </div>
+          <div class="field full" data-field-wrap="photography">
+            <label>Photography Interests</label>
+            <div class="chip-group" data-chip-field="photography" data-mode="multi"></div>
+          </div>
+          <div class="field full" data-field-wrap="travelInterests">
+            <label>Travel Interests</label>
+            <div class="chip-group" data-chip-field="travelInterests" data-mode="multi"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 — AI QUESTIONS -->
+      <div class="wizard-step" data-step="6">
+        <h3>✨ A Few AI Questions</h3>
+        <p class="step-sub">The more you share, the more personalized your report will be.</p>
+        <div class="field-grid">
+          <div class="field full" data-field-wrap="q1">
+            <label>Describe your ideal vacation *</label>
+            <textarea id="q1" rows="3" placeholder="e.g. Slow mornings, misty hills, warm food..."></textarea>
+            <span class="field-error-msg">Please share a little about your ideal vacation.</span>
+          </div>
+          <div class="field full" data-field-wrap="q2">
+            <label>What experience do you want the most? *</label>
+            <textarea id="q2" rows="3" placeholder="e.g. Connecting with local farmers, wildlife spotting..."></textarea>
+            <span class="field-error-msg">Please tell us the experience you want most.</span>
+          </div>
+          <div class="field full">
+            <label>Have you visited a similar sustainable/nature destination before?</label>
+            <textarea id="q3" rows="2" placeholder="Optional"></textarea>
+          </div>
+          <div class="field full">
+            <label>Anything you want to avoid?</label>
+            <textarea id="q4" rows="2" placeholder="Optional"></textarea>
+          </div>
+          <div class="field full">
+            <label>Any special requests?</label>
+            <textarea id="q5" rows="2" placeholder="Optional"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 7 — LOADING / RESULT (not part of progress bar) -->
+      <div class="wizard-step" data-step="7" id="resultStep">
+        <div class="wizard-loading" id="wizardLoading">
+          <div class="eco-spinner"></div>
+          <p>⏳ Generating your perfect eco travel plan...</p>
+        </div>
+        <div id="aiResult" class="report-box" style="display:none;"></div>
+        <button type="button" class="wizard-restart" id="restartBtn" style="display:none;">🔄 Plan Another Trip</button>
+      </div>
+
+    </form>
+
+    <!-- NAV BUTTONS -->
+    <div class="wizard-nav" id="wizardNav">
+      <button type="button" class="wizard-btn prev" id="prevBtn" disabled>‹ Previous</button>
+      <button type="button" class="wizard-btn next" id="nextBtn">Next ›</button>
+      <button type="button" class="wizard-btn generate" id="generateBtn" style="display:none;">✨ Generate My Plan</button>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+
+<!-- ===================== FEATURED VILLAGES ===================== -->
+<!-- ===================== FEATURED VILLAGES ===================== -->
+<section class="section" id="destinations">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow green">Featured Destinations</div>
+      <h2 class="section-title">Five villages, one living tradition Bengal Tourism</h2>
+      <p class="section-sub">Every region carries its own craft, festival and forest. Pick a trail and meet the families who keep it alive.</p>
+    </div>
+
+    <div class="village-grid">
+
+      <div class="village-card feature reveal" data-modal="purulia">
+       <div class="vc-art">
+  <video autoplay muted loop playsinline class="vc-video">
+    <source src="assets/purulia.mp4" type="video/mp4">
+  </video>
+</div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Red Earth &amp; Chhau Masks</span>
+          <h3>Purulia</h3>
+          <p>Laterite hills, Sal forests and villages where the thunder of Chhau dance drums still opens the harvest season.</p>
+          <div class="vc-attractions">
+            <span>Ajodhya Hills</span><span>Chhau Dance Villages</span><span>Garpanchakot Fort</span>
+          </div>
+          <button class="vc-btn" data-modal-trigger="purulia">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="andul">
+        <div class="vc-art" style="background:#1c5f78;">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/andul.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Heritage by the River</span>
+          <h3>Andul</h3>
+          <p>Crumbling zamindar mansions and terracotta temples lining a quiet riverside, an hour from Kolkata.</p>
+          <div class="vc-attractions"><span>Andul Rajbari</span><span>Riverside Ghats</span></div>
+          <button class="vc-btn" data-modal-trigger="andul">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="sundarbans">
+        <div class="vc-art" style="background:#1f8a5a;">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/sundarbans.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Where Mangroves Meet Mankind</span>
+          <h3>Sundarbans Villages</h3>
+          <p>Stilt homes, honey collectors and boat-only eco-lodges deep in the world's largest mangrove delta.</p>
+          <div class="vc-attractions"><span>Mangrove Boat Safaris</span><span>Honey Collector Trails</span></div>
+          <button class="vc-btn" data-modal-trigger="sundarbans">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="bishnupur">
+        <div class="vc-art" style="background:#e1672e;">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/bishnupur.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Terracotta Temple Town</span>
+          <h3>Bishnupur</h3>
+          <p>Hand-carved terracotta temples, Baluchari silk looms, and the deep classical ragas of the Bishnupur gharana.</p>
+          <div class="vc-attractions"><span>Terracotta Temples</span><span>Baluchari Weaving</span></div>
+          <button class="vc-btn" data-modal-trigger="bishnupur">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="shantiniketan">
+        <div class="vc-art" style="background:#f0ad2e;">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/Shantiniketan.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Tagore's Open-Air Classroom</span>
+          <h3>Shantiniketan Region</h3>
+          <p>Red-soil Khoai landscapes, Baul minstrels and Santal hamlets surrounding Tagore's university town.</p>
+          <div class="vc-attractions"><span>Khoai Sonajhuri Forest</span><span>Baul Music Villages</span></div>
+          <button class="vc-btn" data-modal-trigger="shantiniketan">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HIDDEN GEMS OF INDIA ===================== -->
+<section class="section section-alt" id="hidden-gems">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow green">Beyond the Usual Trail</div>
+      <h2 class="section-title">Hidden gems across India</h2>
+      <p class="section-sub">Mountains, coasts, forests and forgotten heritage towns that rarely make the mainstream itinerary.</p>
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">🏔️ Mountains &amp; Valleys</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="mechuka">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#2a8fae 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/Mechuka.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Snow &amp; Tibetan Culture</span>
+          <h3>Mechuka</h3>
+          <p>Snow-capped mountains, wooden villages, Tibetan culture. Best for adventure, photography and peace.</p>
+          <div class="vc-attractions"><span>Best Season: Oct–Apr</span></div>
+          <button class="vc-btn" data-modal-trigger="mechuka">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="tirthan">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#1f8a5a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/Tirthan Valley.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Rivers &amp; Trout Fishing</span>
+          <h3>Tirthan Valley</h3>
+          <p>Crystal-clear rivers, trout fishing, hiking. Gateway to Great Himalayan National Park.</p>
+          <div class="vc-attractions"><span>Best Season: Mar–Jun &amp; Sep–Nov</span></div>
+          <button class="vc-btn" data-modal-trigger="tirthan">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="ziro">
+        <div class="vc-art" style="background:linear-gradient(135deg,#7bc97e,#1f8a5a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/Ziro Valley.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Rice Fields &amp; Apatani Culture</span>
+          <h3>Ziro Valley</h3>
+          <p>Famous for rice fields, pine forests, and the indigenous Apatani community. Home to the Ziro Music Festival.</p>
+          <div class="vc-attractions"><span>Ziro Music Festival</span></div>
+          <button class="vc-btn" data-modal-trigger="ziro">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="munsiyari">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#0f5c3d 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/Munsiyari.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Himalayan Viewpoint</span>
+          <h3>Munsiyari</h3>
+          <p>One of the best Himalayan viewpoints. Base for glaciers and trekking.</p>
+          <div class="vc-attractions"><span>Glacier Treks</span></div>
+          <button class="vc-btn" data-modal-trigger="munsiyari">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">🌊 Coastal Escapes</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="gokarna">
+        <div class="vc-art" style="background:linear-gradient(135deg,#2a8fae,#9adde8 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/gokarna.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Quiet Beach Trekking</span>
+          <h3>Gokarna</h3>
+          <p>Less crowded alternative to Goa. Beach trekking and cafés.</p>
+          <div class="vc-attractions"><span>Beach Trails</span><span>Cafés</span></div>
+          <button class="vc-btn" data-modal-trigger="gokarna">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="maravanthe">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#9adde8 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/maravanthe.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Sea Meets River</span>
+          <h3>Maravanthe Beach</h3>
+          <p>A unique highway runs between the sea and a river. Stunning sunrise and sunset.</p>
+          <div class="vc-attractions"><span>Coastal Highway</span></div>
+          <button class="vc-btn" data-modal-trigger="maravanthe">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="agatti">
+        <div class="vc-art" style="background:linear-gradient(135deg,#7bc97e,#9adde8 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/agatti.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Coral Reefs &amp; Lagoons</span>
+          <h3>Agatti Island</h3>
+          <p>Turquoise lagoons and coral reefs. Great for snorkeling and diving.</p>
+          <div class="vc-attractions"><span>Snorkeling</span><span>Diving</span></div>
+          <button class="vc-btn" data-modal-trigger="agatti">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="mandarmani">
+        <div class="vc-art" style="background:linear-gradient(135deg,#9adde8,#2a8fae 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/mandarmani.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Long Sandy Beach</span>
+          <h3>Mandarmani</h3>
+          <p>Long sandy beach with fewer crowds than many popular coastal destinations.</p>
+          <div class="vc-attractions"><span>Beach Drives</span></div>
+          <button class="vc-btn" data-modal-trigger="mandarmani">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">🌿 Nature &amp; Forests</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="mawlynnong">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#7bc97e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/mawlynnong.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Cleanest Village</span>
+          <h3>Mawlynnong</h3>
+          <p>Known for cleanliness and living root bridges.</p>
+          <div class="vc-attractions"><span>Living Root Bridges</span></div>
+          <button class="vc-btn" data-modal-trigger="mawlynnong">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="dzukou">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1f8a5a,#f0ad2e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/dzukou.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Seasonal Wildflowers</span>
+          <h3>Dzukou Valley</h3>
+          <p>Famous for seasonal wildflowers and rolling green hills.</p>
+          <div class="vc-attractions"><span>Wildflower Trek</span></div>
+          <button class="vc-btn" data-modal-trigger="dzukou">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="keibul">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#2a8fae 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/keibul.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">World's Only Floating Park</span>
+          <h3>Keibul Lamjao National Park</h3>
+          <p>The world's only floating national park. Home of the endangered Sangai deer.</p>
+          <div class="vc-attractions"><span>Sangai Deer</span></div>
+          <button class="vc-btn" data-modal-trigger="keibul">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="majuli">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#7bc97e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/majuli.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">River Island Culture</span>
+          <h3>Majuli</h3>
+          <p>One of the world's largest inhabited river islands. Rich in Assamese culture and monasteries.</p>
+          <div class="vc-attractions"><span>Assamese Monasteries</span></div>
+          <button class="vc-btn" data-modal-trigger="majuli">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">🏛️ Heritage &amp; Culture</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="mandu">
+        <div class="vc-art" style="background:linear-gradient(135deg,#9c4a26,#e1672e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/mandu.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Afghan Architecture</span>
+          <h3>Mandu</h3>
+          <p>Romantic forts and Afghan architecture.</p>
+          <div class="vc-attractions"><span>Historic Forts</span></div>
+          <button class="vc-btn" data-modal-trigger="mandu">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="chettinad">
+        <div class="vc-art" style="background:linear-gradient(135deg,#b9810f,#e1672e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/chettinad.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Mansions &amp; Cuisine</span>
+          <h3>Chettinad</h3>
+          <p>Magnificent mansions and world-famous cuisine.</p>
+          <div class="vc-attractions"><span>Chettinad Cuisine</span></div>
+          <button class="vc-btn" data-modal-trigger="chettinad">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="orchha">
+        <div class="vc-art" style="background:linear-gradient(135deg,#9c4a26,#f0ad2e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/orchha.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Palaces &amp; Cenotaphs</span>
+          <h3>Orchha</h3>
+          <p>Palaces, temples, and riverside cenotaphs.</p>
+          <div class="vc-attractions"><span>Riverside Cenotaphs</span></div>
+          <button class="vc-btn" data-modal-trigger="orchha">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="lepakshi">
+        <div class="vc-art" style="background:linear-gradient(135deg,#e1672e,#f0ad2e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/lepakshi.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Hanging Pillar</span>
+          <h3>Lepakshi Temple</h3>
+          <p>Known for its hanging pillar and beautiful Vijayanagara-era carvings.</p>
+          <div class="vc-attractions"><span>Vijayanagara Carvings</span></div>
+          <button class="vc-btn" data-modal-trigger="lepakshi">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">❄️ High-Altitude Hidden Gems</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="yumthang">
+        <div class="vc-art" style="background:linear-gradient(135deg,#2a8fae,#f8d27a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/yumthang.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Valley of Flowers of the East</span>
+          <h3>Yumthang Valley</h3>
+          <p>Called the "Valley of Flowers of the East."</p>
+          <div class="vc-attractions"><span>Alpine Flowers</span></div>
+          <button class="vc-btn" data-modal-trigger="yumthang">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="kalpa">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#f8d27a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/kalpa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Kinnaur Kailash Views</span>
+          <h3>Kalpa</h3>
+          <p>Spectacular views of the Kinnaur Kailash range.</p>
+          <div class="vc-attractions"><span>Kinnaur Kailash</span></div>
+          <button class="vc-btn" data-modal-trigger="kalpa">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="tawang">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#f8d27a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/tawang.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Monastery &amp; Mountain Passes</span>
+          <h3>Tawang</h3>
+          <p>Stunning monastery, mountain passes, and lakes.</p>
+          <div class="vc-attractions"><span>Tawang Monastery</span></div>
+          <button class="vc-btn" data-modal-trigger="tawang">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="chitkul">
+        <div class="vc-art" style="background:linear-gradient(135deg,#9adde8,#f8d27a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/chitkul.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Last Village on the Border</span>
+          <h3>Chitkul</h3>
+          <p>The last inhabited village before the Indo-Tibet border.</p>
+          <div class="vc-attractions"><span>Indo-Tibet Border</span></div>
+          <button class="vc-btn" data-modal-trigger="chitkul">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="section-title" style="font-size:26px;margin:40px 0 20px;">✨ More Underrated Must-Visits</h3>
+    <div class="village-grid">
+
+      <div class="village-card reveal" data-modal="spiti">
+        <div class="vc-art" style="background:linear-gradient(135deg,#52645b,#9adde8 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/spiti.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Cold Desert Moonscape</span>
+          <h3>Spiti Valley</h3>
+          <p>Cold desert moonscapes, ancient monasteries, and some of the highest motorable villages in the world.</p>
+          <div class="vc-attractions"><span>Himachal Pradesh</span></div>
+          <button class="vc-btn" data-modal-trigger="spiti">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="khonoma">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#1c5f78 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/khonoma.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">India's First Green Village</span>
+          <h3>Khonoma</h3>
+          <p>Terraced farming and Angami warrior heritage.</p>
+          <div class="vc-attractions"><span>Nagaland</span></div>
+          <button class="vc-btn" data-modal-trigger="khonoma">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="gandikota">
+        <div class="vc-art" style="background:linear-gradient(135deg,#9c4a26,#f0ad2e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/gandikota.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Grand Canyon of India</span>
+          <h3>Gandikota</h3>
+          <p>A canyon carved by the Pennar river, often called the "Grand Canyon of India."</p>
+          <div class="vc-attractions"><span>Andhra Pradesh</span></div>
+          <button class="vc-btn" data-modal-trigger="gandikota">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="patan">
+        <div class="vc-art" style="background:linear-gradient(135deg,#b9810f,#7bc97e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/patan.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Rani ki Vav Stepwell</span>
+          <h3>Patan</h3>
+          <p>Home to Rani ki Vav, an intricately carved stepwell and UNESCO World Heritage Site.</p>
+          <div class="vc-attractions"><span>Gujarat</span></div>
+          <button class="vc-btn" data-modal-trigger="patan">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="bomdila">
+        <div class="vc-art" style="background:linear-gradient(135deg,#1c5f78,#7bc97e 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/bomdila.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Monasteries &amp; Apple Orchards</span>
+          <h3>Bomdila</h3>
+          <p>Quiet monasteries and apple orchards with views of the eastern Himalayan range.</p>
+          <div class="vc-attractions"><span>Arunachal Pradesh</span></div>
+          <button class="vc-btn" data-modal-trigger="bomdila">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="village-card reveal" data-modal="chopta">
+        <div class="vc-art" style="background:linear-gradient(135deg,#0f5c3d,#f8d27a 70%);">
+          <video autoplay muted loop playsinline class="vc-video">
+            <source src="assets/chopta.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vc-shade"></div>
+        <div class="vc-body">
+          <span class="vc-tag">Mini Switzerland</span>
+          <h3>Chopta</h3>
+          <p>Alpine meadows and the Tungnath trek nearby, known as "mini Switzerland."</p>
+          <div class="vc-attractions"><span>Uttarakhand</span></div>
+          <button class="vc-btn" data-modal-trigger="chopta">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ===================== SUSTAINABLE COMMUNITY MODEL ===================== -->
+<section class="section" id="sustainability">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow yellow">Sustainability</div>
+      <h2 class="section-title">A village economy that powers itself</h2>
+      <p class="section-sub">Every stay sits inside a working circular economy — waste becomes energy, and energy comes back to the community.</p>
+    </div>
+
+    <div class="energy-wrap">
+      <div class="energy-ring reveal">
+        <svg viewBox="0 0 560 560">
+          <defs>
+            <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1f8a5a"/>
+              <stop offset="50%" stop-color="#2a8fae"/>
+              <stop offset="100%" stop-color="#f0ad2e"/>
+            </linearGradient>
+          </defs>
+          <circle cx="280" cy="280" r="190" fill="none" stroke="#e7efe6" stroke-width="3"/>
+          <circle id="flowPath" cx="280" cy="280" r="190" fill="none" stroke="url(#flow)" stroke-width="3" stroke-dasharray="22 14" stroke-linecap="round"/>
+        </svg>
+
+        <div class="energy-node" style="top:0%;left:50%;">
+          <div class="node-circle" style="background:rgba(123,201,126,.25);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0f5c3d" stroke-width="1.8"><path d="M4 15c0-4 3-6 8-6s8 2 8 6"/><circle cx="8" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><path d="M2 15h20v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3z"/></svg>
+          </div>
+          <b>Farm Waste &amp; Cattle</b><span>Step 1</span>
+        </div>
+
+        <div class="energy-node" style="top:30%;left:95%;">
+          <div class="node-circle" style="background:rgba(240,173,46,.22);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#b9810f" stroke-width="1.8"><circle cx="12" cy="13" r="7"/><path d="M12 6c1-2-1-3 0-5"/></svg>
+          </div>
+          <b>Biogas Production</b><span>Step 2</span>
+        </div>
+
+        <div class="energy-node" style="top:80%;left:78%;">
+          <div class="node-circle" style="background:rgba(42,143,174,.2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1c5f78" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V6h3v4"/><path d="M13 10V4h3v6"/></svg>
+          </div>
+          <b>Methane Power Plant</b><span>Step 3</span>
+        </div>
+
+        <div class="energy-node" style="top:80%;left:22%;">
+          <div class="node-circle" style="background:rgba(225,103,46,.2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9612e" stroke-width="1.8"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          </div>
+          <b>Electricity Generation</b><span>Step 4</span>
+        </div>
+
+        <div class="energy-node" style="top:30%;left:5%;">
+          <div class="node-circle" style="background:rgba(31,138,90,.2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0f5c3d" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+          </div>
+          <b>Community Usage</b><span>Step 5</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="energy-copy-list">
+          <div class="energy-copy-item"><span class="num">01</span><p><b>Cattle and crop waste</b> from every homestead is collected daily by the village cooperative.</p></div>
+          <div class="energy-copy-item"><span class="num">02</span><p><b>Biogas digesters</b> convert that waste into methane, cutting firewood use in kitchens.</p></div>
+          <div class="energy-copy-item"><span class="num">03</span><p><b>A shared power plant</b> burns the methane to drive small generators built for village-scale load.</p></div>
+          <div class="energy-copy-item"><span class="num">04</span><p><b>Electricity</b> is metered and distributed fairly across homes, homestays and workshops.</p></div>
+          <div class="energy-copy-item"><span class="num">05</span><p>Leftover slurry returns to the fields as fertiliser, closing the loop back to <b>step one</b>.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="energy-extra">
+      <div class="energy-chip reveal">
+        <div class="ec-icon" style="background:rgba(240,173,46,.18);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b9810f" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M3 10h18M9 4v12M15 4v12"/><path d="M12 16v4M8 20h8"/></svg>
+        </div>
+        <span>Solar Panels</span>
+      </div>
+      <div class="energy-chip reveal">
+        <div class="ec-icon" style="background:rgba(42,143,174,.18);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1c5f78" stroke-width="1.8"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg>
+        </div>
+        <span>Rainwater Harvesting</span>
+      </div>
+      <div class="energy-chip reveal">
+        <div class="ec-icon" style="background:rgba(123,201,126,.2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0f5c3d" stroke-width="1.8"><path d="M12 22V10"/><path d="M12 10c0-4-3-6-7-6 0 4 3 7 7 6z"/><path d="M12 14c0-3 3-5 7-5 0 4-3 6-7 5z"/></svg>
+        </div>
+        <span>Organic Farming</span>
+      </div>
+      <div class="energy-chip reveal">
+        <div class="ec-icon" style="background:rgba(225,103,46,.18);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9612e" stroke-width="1.8"><path d="M7 7l3-4 3 4M10 3v6M4 14l3 5h10l3-5"/><path d="M4 14a6 6 0 0 1 6-5M20 14a6 6 0 0 0-6-5"/></svg>
+        </div>
+        <span>Waste Recycling</span>
+      </div>
+      <div class="energy-chip reveal">
+        <div class="ec-icon" style="background:rgba(31,138,90,.18);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0f5c3d" stroke-width="1.8"><circle cx="12" cy="13" r="7"/><path d="M12 13l3-3M12 4v2"/></svg>
+        </div>
+        <span>Energy Monitoring</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="partner-section">
+  <h2>🏨 Hotels & Homestays</h2>
+  <p class="partner-sub">Book a stay run by local hosts</p>
+  <div class="pl-grid" id="listings-hotel"></div>
+</section>
+
+<section class="partner-section">
+  <h2>🧳 Travel Agents</h2>
+  <p class="partner-sub">Plan your trip with a local expert</p>
+  <div class="pl-grid" id="listings-agent"></div>
+</section>
+
+<section class="partner-section">
+  <h2>🧭 Local Guides</h2>
+  <p class="partner-sub">Explore with someone who knows the area</p>
+  <div class="pl-grid" id="listings-guide"></div>
+</section>
+<!-- ===================== LOCAL EXPERIENCES ===================== -->
+<section class="section section-alt" id="experiences">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow orange">Local Experiences</div>
+      <h2 class="section-title">Learn it from the hands that make it</h2>
+      <p class="section-sub">Hover or tap a card to see what a typical session involves.</p>
+    </div>
+
+    <div class="exp-grid">
+
+      <div class="exp-flip reveal" style="--c1:#1f8a5a;--c2:#0f5c3d;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg></div>
+            <h4>Folk Dance</h4><span>Chhau &amp; Baul</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Folk Dance</h4>
+            <p>Join Purulia's Chhau performers for a mask-painting demo followed by a beginner's movement session set to live dhol.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-flip reveal" style="--c1:#e1672e;--c2:#9c4a26;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.5" fill="#fff"/><path d="M3 12h18"/></svg></div>
+            <h4>Pottery Workshops</h4><span>Panchmura Terracotta</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Pottery Workshops</h4>
+            <p>Shape your own terracotta horse on a hand-spun wheel beside Bishnupur's master potters, then fire and take it home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-flip reveal" style="--c1:#2a8fae;--c2:#1c5f78;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 22V10"/><path d="M12 10c0-4-3-6-7-6 0 4 3 7 7 6z"/><path d="M12 14c0-3 3-5 7-5 0 4-3 6-7 5z"/></svg></div>
+            <h4>Village Farming</h4><span>Hands in the Field</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Village Farming Experience</h4>
+            <p>Plant or harvest rice alongside your host family, then learn how compost and biogas slurry feed the next season's crop.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-flip reveal" style="--c1:#f0ad2e;--c2:#b9810f;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 13a8 8 0 0 1 16 0v6H4z"/><path d="M2 19h20"/></svg></div>
+            <h4>Local Cuisine</h4><span>Seasonal Bengali Thali</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Local Cuisine</h4>
+            <p>Cook a five-course Bengali thali with your host using vegetables picked that morning from the homestead garden.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-flip reveal" style="--c1:#7bc97e;--c2:#1f8a5a;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h4>Handicraft Making</h4><span>Dokra &amp; Baluchari</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Handicraft Making</h4>
+            <p>Try lost-wax Dokra metal casting or sit at a Baluchari loom to weave a few rows of silk under expert guidance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-flip reveal" style="--c1:#1c5f78;--c2:#0f5c3d;">
+        <div class="exp-flip-inner">
+          <div class="exp-face exp-front">
+            <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M3 20l6-14 4 8 3-5 5 11z"/></svg></div>
+            <h4>Nature Trails</h4><span>Forest &amp; Wetland Walks</span>
+          </div>
+          <div class="exp-face exp-back">
+            <h4>Nature Trails</h4>
+            <p>Walk the Ajodhya Hills, the Khoai red-soil forest, or a Sundarbans mangrove boardwalk with a local naturalist guide.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== TRAVELER INSIGHTS ===================== -->
+<section class="section section-alt" id="insights">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow blue">Traveler Insights</div>
+      <h2 class="section-title">Built from what travellers actually told us</h2>
+      <p class="section-sub insight-source">Drawn from a 31-response Tourism &amp; Hospitality Survey of Indian travellers — the pain points and requests below shaped this platform's priorities.</p>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight-col reveal">
+        <h3>Biggest problems travellers face</h3>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Finding clean washrooms</b><span>71%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:71%;background:var(--orange);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Waste &amp; litter at destinations</b><span>51.6%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:51.6%;background:var(--green);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Poor internet connectivity</b><span>41.9%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:41.9%;background:var(--blue);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>High prices &amp; hidden costs</b><span>41.9%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:41.9%;background:var(--yellow);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Traffic congestion</b><span>41.9%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:41.9%;background:var(--orange);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Safety concerns</b><span>35.5%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:35.5%;background:var(--green-deep);"></div></div>
+        </div>
+      </div>
+
+      <div class="insight-col reveal">
+        <h3>Smart features travellers want most</h3>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>AI travel assistant</b><span>45.2%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:45.2%;background:var(--blue);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Digital local guide</b><span>41.9%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:41.9%;background:var(--green);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Emergency SOS</b><span>35.5%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:35.5%;background:var(--orange);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Water quality monitoring</b><span>35.5%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:35.5%;background:var(--blue-light);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Cashless payments</b><span>25.8%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:25.8%;background:var(--yellow);"></div></div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-item-top"><b>Real-time crowd updates</b><span>22.6%</span></div>
+          <div class="insight-bar-track"><div class="insight-bar-fill" style="width:22.6%;background:var(--green-deep);"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-stats-row">
+      <div class="insight-stat reveal">
+        <div class="num">64.5%</div>
+        <p>would choose an eco-friendly homestay over a standard hotel at the same price — the core bet behind EcoVillage Trails.</p>
+      </div>
+      <div class="insight-stat reveal">
+        <div class="num">61.3%</div>
+        <p>are drawn most to hill stations and nature escapes — exactly the kind of rural, green destinations this platform features.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SUSTAINABILITY COMMITMENT ===================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow green">Our Commitment</div>
+      <h2 class="section-title">Built on four promises</h2>
+    </div>
+
+    <div class="commit-grid">
+      <div class="commit-card reveal" style="--accent:#1f8a5a;--accent-soft:rgba(31,138,90,.12);">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21v-2a6 6 0 0 1 12 0v2"/><path d="M15 21v-1a4 4 0 0 1 6 0v1"/></svg></div>
+        <h4>100% Community Participation</h4>
+        <p>Every homestay, guide and craft session is run by a village family, not an outside operator.</p>
+      </div>
+      <div class="commit-card reveal" style="--accent:#2a8fae;--accent-soft:rgba(42,143,174,.12);">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h4>Renewable Energy Usage</h4>
+        <p>Biogas, solar and small hydro cover the electricity needs of partner villages.</p>
+      </div>
+      <div class="commit-card reveal" style="--accent:#e1672e;--accent-soft:rgba(225,103,46,.12);">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-7h6v7"/></svg></div>
+        <h4>Cultural Preservation</h4>
+        <p>Tourism income directly funds Chhau troupes, weaving cooperatives and folk music schools.</p>
+      </div>
+      <div class="commit-card reveal" style="--accent:#f0ad2e;--accent-soft:rgba(240,173,46,.14);">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg></div>
+        <h4>Sustainable Tourism Practices</h4>
+        <p>Visitor numbers are capped per village so growth never outpaces the land or the culture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================================================================
+     🌿 ECOVILLAGE LIVE UPDATES
+     AI processing powered by GROQ (see /api/live-updates.js)
+     ================================================================ -->
+<section class="live-updates-section" id="live-updates">
+  <h2 class="live-updates-header">🌿 EcoVillage Live Updates</h2>
+  <p class="live-updates-sub">Fresh tourism news, festivals, weather alerts &amp; more from across India</p>
+
+  <div class="lu-controls">
+    <div class="lu-search-wrap">
+      <input
+        type="text"
+        id="luSearch"
+        placeholder="Search by destination, state, festival, or park..."
+        aria-label="Search live updates"
+      >
+    </div>
+
+    <div class="lu-filters" role="tablist" aria-label="Filter live updates by category">
+      <button class="lu-chip active" data-filter="All" role="tab" aria-selected="true">All</button>
+      <button class="lu-chip" data-filter="Tourism" role="tab" aria-selected="false">Tourism</button>
+      <button class="lu-chip" data-filter="Festivals" role="tab" aria-selected="false">Festivals</button>
+      <button class="lu-chip" data-filter="Weather" role="tab" aria-selected="false">Weather</button>
+      <button class="lu-chip" data-filter="Wildlife" role="tab" aria-selected="false">Wildlife</button>
+      <button class="lu-chip" data-filter="Eco" role="tab" aria-selected="false">Eco</button>
+      <button class="lu-chip" data-filter="Transport" role="tab" aria-selected="false">Transport</button>
+    </div>
+  </div>
+
+  <div class="lu-grid" id="luGrid" role="list" aria-live="polite">
+    <!-- cards injected by js/live-updates.js -->
+  </div>
+</section>
+
+<!-- Ask AI modal (used by js/live-updates.js) -->
+<div class="lu-modal-overlay" id="luModalOverlay">
+  <div class="lu-modal" role="dialog" aria-modal="true" aria-labelledby="luModalHeading">
+    <button class="lu-modal-close" onclick="luCloseModal()" aria-label="Close">&times;</button>
+    <h3 id="luModalHeading">Ask AI</h3>
+    <div class="lu-modal-body" id="luModalBody"></div>
+  </div>
+</div>
+<!-- ===================== FOOTER ===================== -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c5-3 8-7 8-12a8 8 0 0 0-16 0c0 5 3 9 8 12z"/></svg>
+          EcoVillage Trails
+        </div>
+        <p>Sustainable rural tourism across West Bengal — built with the villages, for the villages.</p>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Citadel Chronicles Studio, Kolkata, West Bengal
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.36 1.96.67 2.89a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.19-1.24a2 2 0 0 1 2.11-.45c.93.31 1.9.54 2.89.67A2 2 0 0 1 22 16.92z"/></svg>
+          +91 00000 00000
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          hello@ecovillagetrails.in
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#stays">Eco Stays</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Stay Updated</h5>
+        <p>Seasonal travel windows, new homestays and village festival dates — once a month, no spam.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="you@email.com" required>
+          <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <p class="news-note" id="newsNote">We'll only email you about Bengal village travel.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sustainability Partners</h5>
+        <div class="partner-row">
+          <span>Bengal Eco Alliance</span>
+          <span>Rural Roots Foundation</span>
+          <span>Greenline Energy Collective</span>
+          <span>Artisans of Bengal Guild</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 EcoVillage Trails. All rights reserved.</span>
+      <span>Designed by Citadel Chronicles Art Studio</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/live-updates.js"></script>
+<script src="js/partners-api.js"></script>
+<script src="js/homepage-listings.js"></script>
+</body>
+</html>

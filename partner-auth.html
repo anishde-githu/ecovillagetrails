@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Login — EcoVillage Trails</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/partners.css">
+</head>
+<body class="partners-body">
+
+<header class="p-topbar">
+  <div class="p-container p-topbar-inner">
+    <a href="index.html" class="p-logo">🌿 EcoVillage Trails</a>
+    <div class="p-topbar-right"><a href="index.html">← Back to site</a></div>
+  </div>
+</header>
+
+<main class="p-page">
+  <div class="p-container narrow">
+    <div class="p-card">
+
+      <div class="p-tabs" role="tablist">
+        <div class="p-tab active" data-tab="signup" role="tab">List your business</div>
+        <div class="p-tab" data-tab="login" role="tab">Partner login</div>
+      </div>
+
+      <div id="alertBox" class="p-alert"></div>
+
+      <!-- SIGNUP -->
+      <form id="signupForm">
+        <h2 style="margin-bottom:6px;font-size:1.4rem;">Join as a partner</h2>
+        <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:20px;">Choose the account type that fits what you offer.</p>
+
+        <div class="p-role-grid" id="roleGrid">
+          <div class="p-role-option selected" data-role="owner">
+            <span class="icon">🏨</span>
+            <span class="title">Hotel Owner</span>
+            <span class="sub">List rooms &amp; homestays</span>
+          </div>
+          <div class="p-role-option" data-role="agent">
+            <span class="icon">🧳</span>
+            <span class="title">Travel Agent</span>
+            <span class="sub">List tour packages</span>
+          </div>
+          <div class="p-role-option" data-role="guide">
+            <span class="icon">🧭</span>
+            <span class="title">Local Guide</span>
+            <span class="sub">List guided experiences</span>
+          </div>
+        </div>
+
+        <div class="p-field">
+          <label for="suName">Full name</label>
+          <input id="suName" type="text" required autocomplete="name">
+        </div>
+        <div class="p-field">
+          <label for="suEmail">Email</label>
+          <input id="suEmail" type="email" required autocomplete="email">
+        </div>
+        <div class="p-field">
+          <label for="suPhone">Phone</label>
+          <input id="suPhone" type="tel" autocomplete="tel">
+        </div>
+        <div class="p-field">
+          <label for="suPassword">Password</label>
+          <input id="suPassword" type="password" required minlength="8" autocomplete="new-password">
+          <small>At least 8 characters.</small>
+        </div>
+
+        <button type="submit" class="p-btn p-btn-primary p-btn-block" id="signupBtn">Create partner account</button>
+      </form>
+
+      <!-- LOGIN -->
+      <form id="loginForm" style="display:none;">
+        <h2 style="margin-bottom:20px;font-size:1.4rem;">Partner login</h2>
+        <div class="p-field">
+          <label for="liEmail">Email</label>
+          <input id="liEmail" type="email" required autocomplete="email">
+        </div>
+        <div class="p-field">
+          <label for="liPassword">Password</label>
+          <input id="liPassword" type="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="p-btn p-btn-primary p-btn-block" id="loginBtn">Log in</button>
+      </form>
+
+    </div>
+  </div>
+</main>
+
+<script src="js/partners-api.js"></script>
+<script src="js/partner-auth.js"></script>
+
+</body>
+</html>

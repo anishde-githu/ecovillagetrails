@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/live-updates?refresh=1&secret=YOUR_CRON_SECRET_HERE",
+      "schedule": "0 6 * * *"
+    }
+  ]
+}

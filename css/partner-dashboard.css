@@ -1,0 +1,6 @@
+.dash-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:28px;}
+  .dash-tabs{display:flex;gap:10px;margin-bottom:24px;}
+  .dash-tab-btn{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:.85rem;cursor:pointer;color:var(--ink-soft);}
+  .dash-tab-btn.active{background:var(--green-deep);color:#fff;border-color:var(--green-deep);}
+  .dash-panel{display:none;}
+  .dash-panel.active{display:block;}

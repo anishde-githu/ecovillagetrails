@@ -1,0 +1,11 @@
+{
+  "name": "ecovillage-trails",
+  "version": "1.0.0",
+  "description": "EcoVillage Trails with Gemini AI Tourism Assistant",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "@google/generative-ai": "^0.24.1",
+    "groq-sdk": "^1.3.0"
+  }
+}
