@@ -2,6 +2,8 @@
 
 A community tourism site (static frontend + Vercel serverless AI/API functions + an optional standalone Express/MongoDB backend for the partner-listing system).
 
+<!-- Redeploy trigger: 2026-07-10T08:35:00Z - minor update to force Vercel rebuild -->
+
 ## ⚠️ Rotate your secrets before you deploy this
 
 The original zip you uploaded had real, working credentials committed inside it:
