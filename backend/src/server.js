@@ -2,7 +2,6 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
-
 import authRoutes from './routes/authRoutes.js';
 import listingRoutes from './routes/listingRoutes.js';
 import partnerRoutes from './routes/partnerRoutes.js';
@@ -11,8 +10,7 @@ import bookingRoutes from './routes/bookingRoutes.js';
 
 const app = express();
 
-// --- CORS: only allow your actual frontend origins ---
-const allowedOrigins = (process.env.CLIENT_ORIGINS || '')
+const allowedOrigins = (process.env.CLIENT_ORIGINS || process.env.CLIENT_ORIGIN || '')
   .split(',')
   .map((o) => o.trim())
   .filter(Boolean);
@@ -20,8 +18,7 @@ const allowedOrigins = (process.env.CLIENT_ORIGINS || '')
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (e.g. curl, Postman) and any whitelisted origin
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
       callback(new Error('Not allowed by CORS'));
@@ -32,7 +29,6 @@ app.use(
 
 app.use(express.json());
 
-// --- Routes ---
 app.use('/api/auth', authRoutes);
 app.use('/api/listings', listingRoutes);
 app.use('/api/partner', partnerRoutes);
@@ -41,7 +37,6 @@ app.use('/api/bookings', bookingRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
-// --- Centralized error handler (catches multer errors, thrown errors, etc) ---
 app.use((err, req, res, next) => {
   console.error(err);
   if (err.message === 'Not allowed by CORS') {
@@ -52,6 +47,15 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-connectDB().then(() => {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-});
+(async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Failed to start server:');
+    console.error(err);
+    process.exit(1);
+  }
+})();

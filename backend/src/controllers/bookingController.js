@@ -4,13 +4,27 @@ import Listing from '../models/Listing.js';
 // POST /api/bookings - guest submits a booking/enquiry request (public, no login)
 export async function createBooking(req, res) {
   try {
-    const { listingId, offeringId, guestName, guestEmail, guestPhone, checkIn, checkOut, guests, notes } = req.body;
+    const {
+      listingId,
+      hotelId,
+      offeringId,
+      roomId,
+      guestName,
+      guestEmail,
+      guestPhone,
+      checkIn,
+      checkOut,
+      guests,
+      notes,
+    } = req.body;
 
-    if (!listingId || !guestName || !guestEmail || !checkIn || !checkOut) {
+    const resolvedListingId = listingId || hotelId;
+
+    if (!resolvedListingId || !guestName || !guestEmail || !checkIn || !checkOut) {
       return res.status(400).json({ error: 'Listing, name, email, check-in and check-out are required.' });
     }
 
-    const listing = await Listing.findOne({ _id: listingId, status: 'approved' });
+    const listing = await Listing.findOne({ _id: resolvedListingId, status: 'approved' });
     if (!listing) return res.status(404).json({ error: 'Listing not found.' });
 
     const checkInDate = new Date(checkIn);
@@ -21,7 +35,7 @@ export async function createBooking(req, res) {
 
     const booking = await Booking.create({
       listing: listing._id,
-      offering: offeringId || undefined,
+      offering: offeringId || roomId || undefined,
       guestName,
       guestEmail,
       guestPhone,

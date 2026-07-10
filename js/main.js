@@ -433,9 +433,8 @@
 
 /* ============================================================
    API CONFIG
-   Change API_BASE to your deployed backend URL once live on Render.
 ============================================================ */
-const API_BASE = 'http://localhost:5500/api';
+const API_BASE = (window.ECOVILLAGE_API_BASE || 'https://ecovillage-backend.onrender.com').replace(/\/$/, '');
 
 /* ---------- static destination info (unchanged - these are regional
    guides, not bookable listings, so they stay hardcoded) ---------- */
@@ -552,7 +551,7 @@ let hotelsCache = []; // hotels currently rendered in the grid, looked up by id 
 async function loadStays(){
   const grid = document.getElementById('stayGrid');
   try{
-    const res = await fetch(`${API_BASE}/hotels`);
+    const res = await fetch(`${API_BASE}/api/listings/hotels`);
     if(!res.ok) throw new Error('Failed to load stays');
     const data = await res.json();
     hotelsCache = data.hotels || [];
@@ -707,7 +706,7 @@ function openBookingModal(hotelId){
     };
 
     try{
-      const res = await fetch(`${API_BASE}/bookings`, {
+      const res = await fetch(`${API_BASE}/api/bookings`, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(payload)

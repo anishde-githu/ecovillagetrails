@@ -24,6 +24,21 @@ export async function listPublicListings(req, res) {
   }
 }
 
+export async function listPublicHotels(req, res) {
+  try {
+    const listings = await Listing.find({ status: 'approved', category: 'hotel' })
+      .populate('owner', 'name')
+      .select('-rejectionReason')
+      .sort('-createdAt');
+
+    const hotels = listings.map(toHotelShape);
+    res.json({ hotels });
+  } catch (err) {
+    console.error('listPublicHotels error:', err);
+    res.status(500).json({ error: 'Could not load hotels.' });
+  }
+}
+
 // GET /api/listings/:id - single approved listing detail (for the listing page)
 export async function getPublicListing(req, res) {
   try {
@@ -33,6 +48,38 @@ export async function getPublicListing(req, res) {
   } catch (err) {
     res.status(500).json({ error: 'Could not load listing.' });
   }
+}
+
+export async function getPublicHotel(req, res) {
+  try {
+    const listing = await Listing.findOne({ _id: req.params.id, status: 'approved', category: 'hotel' })
+      .populate('owner', 'name');
+    if (!listing) return res.status(404).json({ error: 'Hotel not found.' });
+    res.json({ hotel: toHotelShape(listing) });
+  } catch (err) {
+    res.status(500).json({ error: 'Could not load hotel.' });
+  }
+}
+
+function toHotelShape(listing) {
+  return {
+    _id: listing._id,
+    name: listing.name,
+    description: listing.description,
+    region: listing.region,
+    category: listing.category,
+    avgRating: listing.avgRating || 0,
+    rooms: (listing.offerings || []).map((offering) => ({
+      _id: offering._id,
+      name: offering.name,
+      pricePerNight: offering.price,
+      maxGuests: offering.maxGuests || 2,
+    })),
+    amenities: listing.amenities || [],
+    owner: listing.owner ? { name: listing.owner.name || 'Host' } : { name: 'Host' },
+    images: listing.images || [],
+    whatsapp: listing.contactPhone || undefined,
+  };
 }
 
 /* ---------------------------------------------------------

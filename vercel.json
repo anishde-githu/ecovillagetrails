@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "functions": {
     "api/*.js": {
       "maxDuration": 30
@@ -8,6 +9,12 @@
     {
       "path": "/api/live-updates?refresh=1&secret=YOUR_CRON_SECRET_HERE",
       "schedule": "0 6 * * *"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }

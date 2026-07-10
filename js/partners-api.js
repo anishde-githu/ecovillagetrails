@@ -4,8 +4,7 @@
    admin-dashboard.html, and listing.html.
    ===================================================================== */
 
-// Change this to your deployed backend URL once you deploy (e.g. Render).
-const API_BASE = window.ECOVILLAGE_API_BASE || 'http://localhost:5000';
+const API_BASE = (window.ECOVILLAGE_API_BASE || 'https://ecovillage-backend.onrender.com').replace(/\/$/, '');
 
 const Auth = {
   getToken() { return localStorage.getItem('ev_token'); },
