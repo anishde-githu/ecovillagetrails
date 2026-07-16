@@ -4,7 +4,7 @@
    admin-dashboard.html, and listing.html.
    ===================================================================== */
 
-const API_BASE = (window.ECOVILLAGE_API_BASE || 'https://ecovillage-backend.onrender.com').replace(/\/$/, '');
+const API_BASE = (window.ECOVILLAGE_API_BASE || 'https://ecovillagetrails-3.onrender.com').replace(/\/$/, '');
 
 const Auth = {
   getToken() { return localStorage.getItem('ev_token'); },
