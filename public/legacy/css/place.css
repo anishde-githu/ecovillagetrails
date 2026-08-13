@@ -1,0 +1,125 @@
+/* ---------- Place detail page ---------- */
+
+.place-topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.place-topbar-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.place-topbar .logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:"Fraunces",serif;
+  font-weight:700;
+  font-size:18px;
+  color:var(--ink);
+  text-decoration:none;
+}
+.place-back{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  font-weight:600;
+  color:var(--green-deep);
+  text-decoration:none;
+}
+
+.place-loading{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:60px 24px;
+  justify-content:center;
+  color:var(--ink-soft);
+}
+
+.place-hero{
+  position:relative;
+  height:52vh;
+  min-height:340px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+}
+.place-hero-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+.place-hero-shade{
+  position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.08) 60%);
+}
+.place-hero-body{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  padding:36px 24px;
+  max-width:1100px;
+  margin:0 auto;
+  width:100%;
+}
+.place-hero-body h1{
+  font-family:"Fraunces",serif;
+  font-size:clamp(32px, 5vw, 52px);
+  margin:8px 0 18px;
+}
+.place-hero-body .feed-tag{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(6px);
+}
+
+.place-body{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 24px 80px;
+}
+.place-section{ margin-bottom:44px; }
+.place-section h2{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-family:"Fraunces",serif;
+  font-size:24px;
+  margin:0 0 14px;
+  color:var(--ink);
+}
+.place-overview-text{ font-size:16px; line-height:1.7; color:var(--ink-soft); }
+.place-muted{ color:var(--ink-soft); font-size:14px; }
+.place-photo-count{ font-size:14px; font-weight:400; color:var(--ink-soft); }
+
+.place-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+  gap:10px;
+}
+.place-gallery-item{
+  display:block;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--bg-alt);
+}
+.place-gallery-item img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.3s ease;
+}
+.place-gallery-item:hover img{ transform:scale(1.06); }
+
+@media (max-width:600px){
+  .place-hero{ height:42vh; min-height:280px; }
+  .place-body{ padding:30px 16px 60px; }
+}

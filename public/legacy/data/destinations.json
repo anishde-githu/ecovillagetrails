@@ -1,0 +1,228 @@
+{
+  "categories": [
+    {
+      "key": "mountains",
+      "title": "Mountains & Valleys",
+      "icon": "mountain",
+      "places": [
+        {
+          "key": "mechuka",
+          "title": "Mechuka",
+          "tag": "Snow & Tibetan Culture",
+          "grad": "linear-gradient(135deg,#1c5f78,#2a8fae 70%)",
+          "video": "mechuka.mp4"
+        },
+        {
+          "key": "tirthan",
+          "title": "Tirthan Valley",
+          "tag": "Rivers & Trout Fishing",
+          "grad": "linear-gradient(135deg,#0f5c3d,#1f8a5a 70%)",
+          "video": "tirthan-valley.mp4"
+        },
+        {
+          "key": "ziro",
+          "title": "Ziro Valley",
+          "tag": "Rice Fields & Apatani Culture",
+          "grad": "linear-gradient(135deg,#7bc97e,#1f8a5a 70%)",
+          "video": "ziro-valley.mp4"
+        },
+        {
+          "key": "munsiyari",
+          "title": "Munsiyari",
+          "tag": "Himalayan Viewpoint",
+          "grad": "linear-gradient(135deg,#1c5f78,#0f5c3d 70%)",
+          "video": "munsiyari.mp4"
+        }
+      ]
+    },
+    {
+      "key": "coastal",
+      "title": "Coastal Escapes",
+      "icon": "wave",
+      "places": [
+        {
+          "key": "gokarna",
+          "title": "Gokarna",
+          "tag": "Quiet Beach Trekking",
+          "grad": "linear-gradient(135deg,#2a8fae,#9adde8 70%)",
+          "video": null
+        },
+        {
+          "key": "maravanthe",
+          "title": "Maravanthe Beach",
+          "tag": "Sea Meets River",
+          "grad": "linear-gradient(135deg,#1c5f78,#9adde8 70%)",
+          "video": null
+        },
+        {
+          "key": "agatti",
+          "title": "Agatti Island",
+          "tag": "Coral Reefs & Lagoons",
+          "grad": "linear-gradient(135deg,#7bc97e,#9adde8 70%)",
+          "video": null
+        },
+        {
+          "key": "mandarmani",
+          "title": "Mandarmani",
+          "tag": "Long Sandy Beach",
+          "grad": "linear-gradient(135deg,#9adde8,#2a8fae 70%)",
+          "video": null
+        }
+      ]
+    },
+    {
+      "key": "nature",
+      "title": "Nature & Forests",
+      "icon": "forest",
+      "places": [
+        {
+          "key": "mawlynnong",
+          "title": "Mawlynnong",
+          "tag": "Cleanest Village",
+          "grad": "linear-gradient(135deg,#0f5c3d,#7bc97e 70%)",
+          "video": null
+        },
+        {
+          "key": "dzukou",
+          "title": "Dzukou Valley",
+          "tag": "Seasonal Wildflowers",
+          "grad": "linear-gradient(135deg,#1f8a5a,#f0ad2e 70%)",
+          "video": null
+        },
+        {
+          "key": "keibul",
+          "title": "Keibul Lamjao National Park",
+          "tag": "World's Only Floating Park",
+          "grad": "linear-gradient(135deg,#0f5c3d,#2a8fae 70%)",
+          "video": null
+        },
+        {
+          "key": "majuli",
+          "title": "Majuli",
+          "tag": "River Island Culture",
+          "grad": "linear-gradient(135deg,#1c5f78,#7bc97e 70%)",
+          "video": null
+        }
+      ]
+    },
+    {
+      "key": "heritage",
+      "title": "Heritage & Culture",
+      "icon": "monument",
+      "places": [
+        {
+          "key": "mandu",
+          "title": "Mandu",
+          "tag": "Afghan Architecture",
+          "grad": "linear-gradient(135deg,#9c4a26,#e1672e 70%)",
+          "video": null
+        },
+        {
+          "key": "chettinad",
+          "title": "Chettinad",
+          "tag": "Mansions & Cuisine",
+          "grad": "linear-gradient(135deg,#b9810f,#e1672e 70%)",
+          "video": null
+        },
+        {
+          "key": "orchha",
+          "title": "Orchha",
+          "tag": "Palaces & Cenotaphs",
+          "grad": "linear-gradient(135deg,#9c4a26,#f0ad2e 70%)",
+          "video": null
+        },
+        {
+          "key": "lepakshi",
+          "title": "Lepakshi Temple",
+          "tag": "Hanging Pillar",
+          "grad": "linear-gradient(135deg,#e1672e,#f0ad2e 70%)",
+          "video": null
+        }
+      ]
+    },
+    {
+      "key": "high-altitude",
+      "title": "High-Altitude Hidden Gems",
+      "icon": "snow",
+      "places": [
+        {
+          "key": "yumthang",
+          "title": "Yumthang Valley",
+          "tag": "Valley of Flowers of the East",
+          "grad": "linear-gradient(135deg,#2a8fae,#f8d27a 70%)",
+          "video": null
+        },
+        {
+          "key": "kalpa",
+          "title": "Kalpa",
+          "tag": "Kinnaur Kailash Views",
+          "grad": "linear-gradient(135deg,#1c5f78,#f8d27a 70%)",
+          "video": null
+        },
+        {
+          "key": "tawang",
+          "title": "Tawang",
+          "tag": "Monastery & Mountain Passes",
+          "grad": "linear-gradient(135deg,#0f5c3d,#f8d27a 70%)",
+          "video": null
+        },
+        {
+          "key": "chitkul",
+          "title": "Chitkul",
+          "tag": "Last Village on the Border",
+          "grad": "linear-gradient(135deg,#9adde8,#f8d27a 70%)",
+          "video": null
+        }
+      ]
+    },
+    {
+      "key": "underrated",
+      "title": "More Underrated Must-Visits",
+      "icon": "discover",
+      "places": [
+        {
+          "key": "spiti",
+          "title": "Spiti Valley",
+          "tag": "Cold Desert Moonscape",
+          "grad": "linear-gradient(135deg,#52645b,#9adde8 70%)",
+          "video": null
+        },
+        {
+          "key": "khonoma",
+          "title": "Khonoma",
+          "tag": "India's First Green Village",
+          "grad": "linear-gradient(135deg,#0f5c3d,#1c5f78 70%)",
+          "video": null
+        },
+        {
+          "key": "gandikota",
+          "title": "Gandikota",
+          "tag": "Grand Canyon of India",
+          "grad": "linear-gradient(135deg,#9c4a26,#f0ad2e 70%)",
+          "video": null
+        },
+        {
+          "key": "patan",
+          "title": "Patan",
+          "tag": "Rani ki Vav Stepwell",
+          "grad": "linear-gradient(135deg,#b9810f,#7bc97e 70%)",
+          "video": null
+        },
+        {
+          "key": "bomdila",
+          "title": "Bomdila",
+          "tag": "Monasteries & Apple Orchards",
+          "grad": "linear-gradient(135deg,#1c5f78,#7bc97e 70%)",
+          "video": null
+        },
+        {
+          "key": "chopta",
+          "title": "Chopta",
+          "tag": "Mini Switzerland",
+          "grad": "linear-gradient(135deg,#0f5c3d,#f8d27a 70%)",
+          "video": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Trip Report | EcoVillage Trails</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Outfit:wght@400;500;600;700&family=Space+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/report.css">
+
+</head>
+<body>
+
+<div class="topbar">
+ <a class="logo" href="index.html"> EcoVillage Trails</a>
+ <div class="topbar-right" style="display:flex;align-items:center;gap:16px;">
+ <a class="back" href="partner-auth.html">List Your Business</a>
+ <a class="back" href="index.html#planner">‹ Back to planner</a>
+ </div>
+</div>
+
+<div id="reportRoot"></div>
+
+<div class="modal-overlay" id="placeModalOverlay">
+ <div class="modal-box">
+ <button class="modal-close" id="placeModalClose"></button>
+ <div id="placeModalBody"><p class="modal-loading">Loading…</p></div>
+ </div>
+</div>
+
+<div class="ask-ai-floating" id="askAiFloating">
+ <button class="ask-ai-toggle" id="askAiToggle" type="button" aria-expanded="false"> Ask AI</button>
+ <div class="ask-ai-panel" id="askAiPanel" aria-live="polite">
+ <div class="ask-ai-header">
+ <div>
+ <h3>Ask AI</h3>
+ <p>Questions about the generated travel report.</p>
+ </div>
+ <button class="ask-ai-close" id="askAiClose" type="button" aria-label="Close Ask AI"></button>
+ </div>
+ <div class="ask-ai-messages" id="askAiMessages">
+ <div class="ask-ai-bubble ask-ai-bubble-bot">Ask anything about this report and I’ll answer using the generated itinerary context.</div>
+ </div>
+ <form class="ask-ai-form" id="askAiForm">
+ <textarea id="askAiInput" rows="3" placeholder="E.g. Which local food should I try first?"></textarea>
+ <button type="submit">Send</button>
+ </form>
+ </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="js/report.js"></script>
+
+<!-- Saves this AI-generated trip to the logged-in user's Firestore `trips`
+     collection so it shows up in My Trips on /my-account. No-ops if no one
+     is logged in. -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="/legacy/js/firebase-config.js"></script>
+<script src="/legacy/js/save-trip.js"></script>
+
+</body>
+</html>

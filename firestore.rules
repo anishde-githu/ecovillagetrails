@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- users/{userId} ----------
+    // Anyone signed-in can read public profile info (name/photo shown on posts, feed, etc).
+    // Only the account owner can create/update their own doc. No client-side deletes.
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // ---------- posts/{postId} ----------
+    // Public read (homepage community feed is visible to everyone, logged in or not,
+    // per Task 3). Only the post's author may create it, and userId must match
+    // their own uid (prevents spoofing someone else's post). Only the author can
+    // edit/delete their own post.
+    match /posts/{postId} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.auth.uid == request.resource.data.userId
+                    && request.resource.data.keys().hasAll(
+                         ["userId", "userName", "location", "imageURL", "review", "createdAt"]
+                       );
+      allow update, delete: if request.auth != null
+                    && request.auth.uid == resource.data.userId;
+    }
+
+    // ---------- trips/{tripId} ----------
+    // Private to the owner — AI-generated trips are personal trip plans, not public content.
+    // Only the logged-in user can read/write their OWN trips (userId must match on create).
+    match /trips/{tripId} {
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null
+                    && request.auth.uid == request.resource.data.userId;
+      allow update, delete: if request.auth != null
+                    && request.auth.uid == resource.data.userId;
+    }
+  }
+}
