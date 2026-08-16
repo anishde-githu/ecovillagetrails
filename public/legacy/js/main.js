@@ -756,6 +756,45 @@ const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
 
+/* ---------- hero heading split-text reveal (ReactBits-style SplitText, ported to vanilla JS) ---------- */
+(function(){
+ const heading = document.querySelector('.hero-text h1');
+ if(!heading) return;
+
+ // Flatten the heading into a single sequence of characters, remembering
+ // which ones came from inside <em> (so they get the gradient treatment) —
+ // avoids nesting cloned elements, which was fragile and produced a stray
+ // floating character. Collapses whitespace runs (including the source
+ // HTML's newlines/indentation) down to single spaces first.
+ const parts = [];
+ heading.childNodes.forEach(node=>{
+  const isEm = node.nodeType === Node.ELEMENT_NODE && node.tagName === 'EM';
+  const text = (node.textContent || '').replace(/\s+/g, ' ');
+  Array.from(text).forEach(ch=> parts.push({ch, em:isEm}));
+ });
+ while(parts.length && parts[0].ch === ' ') parts.shift();
+ while(parts.length && parts[parts.length-1].ch === ' ') parts.pop();
+
+ heading.innerHTML = '';
+ parts.forEach((p, i)=>{
+  const span = document.createElement('span');
+  span.className = 'ecv-split-char' + (p.em ? ' ecv-split-em' : '');
+  span.textContent = p.ch === ' ' ? '\u00A0' : p.ch;
+  span.style.transitionDelay = (i * 26) + 'ms';
+  heading.appendChild(span);
+ });
+
+ const splitIO = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+   if(en.isIntersecting){
+    heading.classList.add('ecv-split-visible');
+    splitIO.unobserve(en.target);
+   }
+  });
+ },{threshold:0.1});
+ splitIO.observe(heading);
+})();
+
 /* ---------- reveal on scroll ---------- */
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries)=>{

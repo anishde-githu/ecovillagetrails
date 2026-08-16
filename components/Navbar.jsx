@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full flex items-center justify-between px-6 py-4 bg-white/90 backdrop-blur border-b border-gray-100 sticky top-0 z-40">
+    <nav className="hidden sm:flex w-full items-center justify-between px-6 py-4 bg-white/90 backdrop-blur border-b border-gray-100 sticky top-0 z-40">
       <Link href="/legacy/index.html" className="text-lg font-bold text-emerald-700">
         EcoVillage Trails
       </Link>

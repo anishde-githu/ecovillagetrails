@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           {/* Bottom padding so content isn't hidden behind the floating mobile nav */}
-          <div className="md:hidden h-20" />
+          <div className="sm:hidden h-20" />
           <MobileNav />
         </AuthProvider>
       </body>

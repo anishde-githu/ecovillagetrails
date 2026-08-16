@@ -8,3 +8,56 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* ============================================================
+   ReactBits-inspired components (components/reactbits/*)
+   ============================================================ */
+
+/* GradientText — animated gradient sweep */
+.ecv-gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation-name: ecv-gradient-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes ecv-gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* SpotlightCard — cursor-following glow */
+.ecv-spotlight-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ecv-spotlight-glow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    var(--spot-color, rgba(31, 138, 90, 0.28)),
+    transparent 70%
+  );
+}
+.ecv-spotlight-card:hover .ecv-spotlight-glow {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ecv-gradient-text {
+    animation: none;
+  }
+}

@@ -574,8 +574,10 @@
  <style>
  .ecv-community-track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;scrollbar-width:none;}
  .ecv-community-track::-webkit-scrollbar{display:none;}
- .ecv-post-card{flex:0 0 260px;text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;cursor:pointer;padding:0;font:inherit;transition:box-shadow .2s;}
+ .ecv-post-card{position:relative;isolation:isolate;flex:0 0 260px;text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;cursor:pointer;padding:0;font:inherit;transition:box-shadow .2s;}
  .ecv-post-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+ .ecv-post-card-glow{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .35s ease;background:radial-gradient(220px circle at var(--spot-x,50%) var(--spot-y,50%), rgba(31,138,90,0.16), transparent 70%);}
+ .ecv-post-card:hover .ecv-post-card-glow{opacity:1;}
  .ecv-post-card-media{position:relative;}
  .ecv-post-card img{width:100%;height:150px;object-fit:cover;display:block;}
  .ecv-post-card-photocount{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.65);color:#fff;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;}
@@ -614,6 +616,7 @@
 <div id="ecvPostModal"></div>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script src="/legacy/js/community-feed.js"></script>
+<script src="/legacy/js/homepage-highlights.js"></script>
 
 
 <!-- ===================== FEATURED VILLAGES ===================== -->
@@ -1053,6 +1056,12 @@
  </div>
 </section>
 <!-- ================================================================
+ AI-CURATED HOMEPAGE HIGHLIGHTS (Seasonal Picks / Real vs Reality / Plan
+ Your Visit) — rendered by js/homepage-highlights.js from
+ /api/homepage-highlights. Sits just above Live Updates per design spec.
+ ================================================================ -->
+<div id="ecvHighlights"></div>
+<!-- ================================================================
  ECOVILLAGE LIVE UPDATES
  AI processing powered by GROQ (see /api/live-updates.js)
  ================================================================ -->
@@ -1163,5 +1172,6 @@
 <script src="js/live-updates.js"></script>
 <script src="js/partners-api.js"></script>
 <script src="js/homepage-listings.js"></script>
+<script src="/legacy/js/mobile-dock.js"></script>
 </body>
 </html>

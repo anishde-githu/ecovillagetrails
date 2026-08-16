@@ -41,6 +41,7 @@
     card.type = "button";
     card.className = "ecv-post-card";
     card.innerHTML = `
+      <span class="ecv-post-card-glow" aria-hidden="true"></span>
       <div class="ecv-post-card-media">
         <img src="${escapeHtml(images[0])}" alt="${escapeHtml(post.location)}" loading="lazy">
         ${images.length > 1 ? `<span class="ecv-post-card-photocount">${images.length} photos</span>` : ""}
@@ -62,6 +63,12 @@
       </div>
     `;
     card.addEventListener("click", () => openModal(post));
+    // ReactBits-inspired SpotlightCard: glow follows the cursor across the card.
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+    });
     return card;
   }
 

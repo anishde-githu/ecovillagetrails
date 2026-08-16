@@ -20,6 +20,8 @@ import {
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db, googleProvider } from "@/lib/firebase";
 import { Mail, Lock, User as UserIcon, Loader2 } from "lucide-react";
+import SplitText from "@/components/reactbits/SplitText";
+import GradientText from "@/components/reactbits/GradientText";
 
 export default function AuthForm({ defaultMode = "login" }) {
   const router = useRouter();
@@ -87,7 +89,13 @@ export default function AuthForm({ defaultMode = "login" }) {
         {/* LEFT: brand */}
         <div className="p-9 sm:p-10 flex flex-col justify-center text-white border-b md:border-b-0 md:border-r border-white/15">
           <h1 className="text-3xl font-extrabold leading-tight mb-3.5">
-            🌿 EcoVillage
+            🌿{" "}
+            <GradientText
+              colors={["#a7f3d0", "#ffffff", "#7bc97e", "#ffffff", "#a7f3d0"]}
+              animationSpeed={5}
+            >
+              EcoVillage
+            </GradientText>
             <br />
             Trails
           </h1>
@@ -104,9 +112,15 @@ export default function AuthForm({ defaultMode = "login" }) {
 
         {/* RIGHT: form */}
         <div className="p-8 sm:p-10 flex flex-col justify-center">
-          <h2 className="text-white text-xl font-bold mb-1.5">
-            {isSignup ? "Create your account" : "Log in to continue"}
-          </h2>
+          <SplitText
+            key={mode}
+            as="h2"
+            text={isSignup ? "Create your account" : "Log in to continue"}
+            splitType="words"
+            delay={45}
+            duration={450}
+            className="text-white text-xl font-bold mb-1.5 block"
+          />
           <p className="text-white/75 text-[13px] mb-5">
             One account gets you the AI planner, your saved trips, and the community feed.
           </p>

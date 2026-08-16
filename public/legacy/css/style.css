@@ -168,6 +168,38 @@ h1,h2,h3,h4{
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
 .reveal.is-visible{opacity:1;transform:translateY(0);}
 
+/* Hero heading split-text reveal (ReactBits-inspired SplitText, vanilla JS — see js/main.js) */
+.hero-text h1 .ecv-split-char{
+ display:inline-block;
+ opacity:0;
+ transform:translateY(22px);
+ transition:opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+}
+.hero-text h1.ecv-split-visible .ecv-split-char{
+ opacity:1;
+ transform:translateY(0);
+}
+/* "Soul" gets a ReactBits-inspired animated GradientText sweep — applied per
+   character (see js/main.js, which flattens the heading into a single list
+   of .ecv-split-char spans and tags the ones from <em> with .ecv-split-em) */
+.hero-text h1 .ecv-split-em{
+ background-image:linear-gradient(90deg, var(--green-deep), var(--green), var(--green-light), var(--green), var(--green-deep));
+ background-size:600% 100%;
+ -webkit-background-clip:text;
+ background-clip:text;
+ color:transparent;
+ -webkit-text-fill-color:transparent;
+ animation:ecv-gradient-move 6s linear infinite;
+}
+@keyframes ecv-gradient-move{
+ 0%{background-position:0% 50%;}
+ 100%{background-position:600% 50%;}
+}
+@media (prefers-reduced-motion: reduce){
+ .hero-text h1 .ecv-split-em{animation:none;}
+ .hero-text h1 .ecv-split-char{transition:none;}
+}
+
 @media (prefers-reduced-motion: reduce){
  *{animation-duration:.001s !important;animation-iteration-count:1 !important;transition-duration:.001s !important;}
 }
@@ -295,6 +327,56 @@ h1,h2,h3,h4{
  .nav-toggle{display:flex;}
  .nav-cta .btn-ghost{display:none;}
 }
+
+/* ============================================================
+ MOBILE DOCK — phone-only nav (see js/mobile-dock.js)
+ On phones, the whole top navbar is replaced by a magnifying bottom dock.
+ Tablet (641–980px) keeps the hamburger nav above unchanged.
+============================================================ */
+@media (max-width:640px){
+ .navbar{display:none;}
+ body{padding-bottom:86px;}
+}
+.ecv-dock{
+ display:none;
+}
+@media (max-width:640px){
+ .ecv-dock{
+  display:flex;
+  position:fixed;
+  left:10px;right:10px;
+  bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+  z-index:1000;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:24px;
+  box-shadow:0 16px 40px -12px rgba(18,38,30,.28);
+  padding:8px 6px;
+  justify-content:space-between;
+  align-items:flex-end;
+ }
+}
+.ecv-dock-item{
+ flex:1;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:2px;
+ text-decoration:none;
+ color:var(--ink-soft);
+ padding:6px 2px;
+ border-radius:14px;
+ transition:transform .18s cubic-bezier(.34,1.56,.64,1), color .2s ease;
+ transform-origin:bottom center;
+ will-change:transform;
+}
+.ecv-dock-icon{width:22px;height:22px;}
+.ecv-dock-icon svg{width:100%;height:100%;}
+.ecv-dock-label{font-size:9.5px;font-weight:600;letter-spacing:.01em;}
+.ecv-dock-item.is-active{color:var(--green-deep);}
+.ecv-dock-item:active{color:var(--green-deep);}
 
 /* ============================================================
  HERO (single version — old centered/flex hero removed)
@@ -1585,4 +1667,158 @@ h2 .h-icon, .section-title .h-icon{ vertical-align:-4px; margin-right:8px; }
   .wxb-grid .wxb-card{ grid-column:auto !important; grid-row:auto !important; }
   .wxb-hero-temp{ font-size:50px; }
   .wxb-hero-icon{ width:76px; height:76px; }
+}
+
+/* ============================================================
+ AI-CURATED HOMEPAGE HIGHLIGHTS (js/homepage-highlights.js)
+ Three ReactBits-inspired sections: Accordion Gallery, Circular Gallery
+ (flip cards), Depth Carousel — sit just above Live Updates.
+============================================================ */
+.ecv-highlight-section{padding-top:56px;padding-bottom:8px;}
+
+/* ---------- 1. Seasonal Picks — Accordion Gallery ---------- */
+.ecv-accordion{
+ display:flex;
+ gap:8px;
+ height:440px;
+ margin-top:32px;
+ overflow-x:auto;
+}
+.ecv-acc-panel{
+ position:relative;
+ flex:1 1 60px;
+ min-width:60px;
+ border-radius:18px;
+ overflow:hidden;
+ cursor:pointer;
+ transition:flex-basis .6s var(--ease), flex-grow .6s var(--ease);
+}
+.ecv-acc-panel.is-open{flex:6 1 320px;}
+.ecv-acc-panel img{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ filter:brightness(.72);transition:filter .5s ease;
+}
+.ecv-acc-panel.is-open img{filter:brightness(.82);}
+.ecv-acc-panel-overlay{
+ position:absolute;left:0;right:0;bottom:0;
+ padding:20px 18px;
+ background:linear-gradient(to top, rgba(10,20,16,.85), transparent 75%);
+ color:#fff;
+ opacity:0;
+ transform:translateY(10px);
+ transition:opacity .35s ease .1s, transform .35s ease .1s;
+}
+.ecv-acc-panel.is-open .ecv-acc-panel-overlay{opacity:1;transform:translateY(0);}
+.ecv-acc-panel-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;display:block;margin-bottom:4px;white-space:nowrap;}
+.ecv-acc-panel-blurb{font-size:12.5px;line-height:1.5;opacity:.92;margin:0;max-width:260px;}
+@media (max-width:767px){
+ .ecv-accordion{height:340px;}
+ .ecv-acc-panel.is-open{flex:4 1 220px;}
+}
+
+/* ---------- 2. Real vs Reality — Circular Gallery (flip cards) ---------- */
+.ecv-reality-track{
+ display:flex;
+ gap:20px;
+ overflow-x:auto;
+ padding:32px 4px 16px;
+ scroll-snap-type:x mandatory;
+ scrollbar-width:none;
+}
+.ecv-reality-track::-webkit-scrollbar{display:none;}
+.ecv-reality-card{
+ flex:0 0 260px;
+ scroll-snap-align:start;
+ cursor:pointer;
+}
+.ecv-reality-flip{
+ position:relative;
+ width:100%;height:260px;
+ perspective:1200px;
+}
+.ecv-reality-card.is-flipped .ecv-reality-flip > .ecv-reality-front{transform:rotateY(180deg);}
+.ecv-reality-card.is-flipped .ecv-reality-flip > .ecv-reality-back{transform:rotateY(0);}
+.ecv-reality-face{
+ position:absolute;inset:0;
+ backface-visibility:hidden;
+ -webkit-backface-visibility:hidden;
+ transition:transform .6s cubic-bezier(.4,.2,.2,1);
+ will-change:transform;
+}
+.ecv-reality-flip{transform-style:preserve-3d;}
+.ecv-reality-face-inner{
+ position:absolute;inset:0;
+ border-radius:18px;overflow:hidden;
+ box-shadow:0 14px 34px -14px rgba(18,38,30,.3);
+}
+.ecv-reality-front{transform:rotateY(0);z-index:2;}
+.ecv-reality-back{transform:rotateY(-180deg);}
+.ecv-reality-face img{width:100%;height:100%;object-fit:cover;display:block;}
+.ecv-reality-tag{
+ position:absolute;top:10px;left:10px;
+ font-size:10.5px;font-weight:700;
+ padding:4px 10px;border-radius:999px;
+ backdrop-filter:blur(6px);
+}
+.ecv-reality-tag-ai{background:rgba(124,58,237,.85);color:#fff;}
+.ecv-reality-tag-real{background:rgba(255,255,255,.9);color:var(--ink);}
+.ecv-reality-caption{padding:14px 2px 0;}
+.ecv-reality-caption strong{font-size:14.5px;color:var(--ink);display:block;margin-bottom:4px;}
+.ecv-reality-caption p{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:0;}
+.ecv-reality-hint{display:block;font-size:10.5px;color:var(--green-deep);font-weight:600;margin-top:6px;}
+
+/* ---------- 3. Plan Your Visit — Depth Carousel ---------- */
+.ecv-depth-carousel{
+ position:relative;
+ display:flex;align-items:center;justify-content:center;
+ margin-top:32px;
+}
+.ecv-depth-stage{
+ position:relative;
+ width:100%;max-width:640px;height:420px;
+}
+.ecv-depth-slide{
+ position:absolute;inset:0;
+ border-radius:24px;overflow:hidden;
+ opacity:0;pointer-events:none;
+ transform:translateX(0) scale(.82);
+ transition:transform .55s var(--ease), opacity .55s var(--ease);
+ box-shadow:0 24px 60px -20px rgba(18,38,30,.35);
+}
+.ecv-depth-slide.is-active{opacity:1;pointer-events:auto;transform:translateX(0) scale(1);z-index:3;}
+.ecv-depth-slide.is-prev{opacity:.55;transform:translateX(-58%) scale(.82);z-index:2;}
+.ecv-depth-slide.is-next{opacity:.55;transform:translateX(58%) scale(.82);z-index:2;}
+.ecv-depth-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.ecv-depth-slide-info{
+ position:absolute;left:0;right:0;bottom:0;
+ padding:26px 28px;
+ background:linear-gradient(to top, rgba(10,20,16,.88), transparent 70%);
+ color:#fff;
+}
+.ecv-depth-slide-time{font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;opacity:.9;}
+.ecv-depth-slide-info h3{font-family:'Fraunces',serif;font-size:1.4rem;margin:6px 0 4px;}
+.ecv-depth-slide-info p{font-size:13px;margin:0;opacity:.9;max-width:440px;}
+.ecv-depth-arrow{
+ flex-shrink:0;
+ width:44px;height:44px;border-radius:50%;
+ background:#fff;border:1px solid var(--line);
+ display:flex;align-items:center;justify-content:center;
+ cursor:pointer;color:var(--ink);
+ box-shadow:var(--shadow-sm);
+ z-index:4;
+ margin:0 14px;
+}
+.ecv-depth-arrow svg{width:20px;height:20px;}
+.ecv-depth-arrow:hover{color:var(--green-deep);}
+.ecv-depth-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
+.ecv-depth-dot{
+ width:8px;height:8px;border-radius:50%;
+ background:var(--line);border:none;cursor:pointer;
+ transition:background .2s ease, width .2s ease;
+}
+.ecv-depth-dot.is-active{background:var(--green-deep);width:22px;border-radius:5px;}
+@media (max-width:767px){
+ .ecv-depth-stage{height:320px;}
+ .ecv-depth-slide.is-prev,.ecv-depth-slide.is-next{opacity:0;pointer-events:none;}
+ .ecv-depth-arrow{width:38px;height:38px;margin:0 6px;}
 }

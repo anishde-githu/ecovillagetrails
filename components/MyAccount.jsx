@@ -10,6 +10,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
 import {
   doc,
   updateDoc,
@@ -19,12 +21,15 @@ import {
   orderBy,
   getDocs,
 } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db, auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
-import { User, MapPin, Loader2, Calendar, IndianRupee, Plus, BookOpen } from "lucide-react";
+import { User, MapPin, Loader2, Calendar, IndianRupee, Plus, BookOpen, Home, LogOut, Compass } from "lucide-react";
 import TripDetail from "./TripDetail";
 import AddStoryWizard from "./AddStoryWizard";
 import PostModal from "./PostModal";
+import SpotlightCard from "./reactbits/SpotlightCard";
+import SplitText from "./reactbits/SplitText";
+import Dock from "./reactbits/Dock";
 
 // --- Fill these in from your Cloudinary dashboard ---
 // Cloud name: Dashboard home page.
@@ -58,32 +63,84 @@ const TAB_ICONS = { Profile: "👤", "My Stories": "📖", "My Trips": "✈️" 
 export default function MyAccount() {
   const { user, profile, setProfile } = useAuth();
   const [activeTab, setActiveTab] = useState("Profile");
+  const [autoOpenWizard, setAutoOpenWizard] = useState(false);
+  const router = useRouter();
 
   if (!user) return null; // guarded by parent page
 
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push("/legacy/index.html");
+  };
+
+  const dockItems = [
+    {
+      key: "home",
+      label: "Home",
+      icon: <Home className="w-[18px] h-[18px] text-emerald-700" strokeWidth={2} />,
+      onClick: () => router.push("/legacy/index.html"),
+    },
+    {
+      key: "explore",
+      label: "Explore",
+      icon: <Compass className="w-[18px] h-[18px] text-emerald-700" strokeWidth={2} />,
+      onClick: () => router.push("/legacy/index.html#destinations"),
+    },
+    {
+      key: "add-story",
+      label: "Add story",
+      icon: <Plus className="w-[18px] h-[18px] text-emerald-700" strokeWidth={2} />,
+      onClick: () => {
+        setActiveTab("My Stories");
+        setAutoOpenWizard(true);
+      },
+    },
+    {
+      key: "profile",
+      label: "Profile",
+      icon: <User className="w-[18px] h-[18px] text-emerald-700" strokeWidth={2} />,
+      onClick: () => setActiveTab("Profile"),
+    },
+    {
+      key: "logout",
+      label: "Log out",
+      icon: <LogOut className="w-[18px] h-[18px] text-red-500" strokeWidth={2} />,
+      onClick: handleLogout,
+    },
+  ];
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 relative z-10">
-      {/* Profile header — glass card */}
-      <div className="flex items-center gap-5 mb-8 bg-white/15 backdrop-blur-xl border border-white/25 rounded-3xl p-6 shadow-xl">
+      {/* Profile header — glass card with cursor-tracking spotlight */}
+      <SpotlightCard
+        spotlightColor="rgba(255,255,255,0.25)"
+        className="flex items-center gap-5 mb-8 bg-white/15 backdrop-blur-xl border border-white/25 rounded-3xl p-6 shadow-xl"
+      >
         {profile?.photoURL ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={profile.photoURL}
             alt="avatar"
-            className="w-20 h-20 rounded-full object-cover border-2 border-white/60 shadow-lg"
+            className="w-20 h-20 rounded-full object-cover border-2 border-white/60 shadow-lg relative z-10"
           />
         ) : (
-          <div className="w-20 h-20 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center">
+          <div className="w-20 h-20 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center relative z-10">
             <User className="w-9 h-9 text-white" />
           </div>
         )}
-        <div>
+        <div className="relative z-10">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
             {profile?.name || "Explorer"} <span>🌿</span>
           </h1>
           <p className="text-emerald-50/80 text-sm">{profile?.email}</p>
         </div>
-      </div>
+      </SpotlightCard>
+
+      {/* Desktop-only quick-actions Dock — deliberately scoped to this page only
+          (per spec: on desktop the magnifying dock lives here, nowhere else;
+          on mobile the site-wide MobileNav/mobile-dock.js already covers this
+          page along with every other page, so no duplicate dock renders here). */}
+      <Dock items={dockItems} className="mb-6" />
 
       {/* Tabs — glass pill bar */}
       <div className="flex gap-2 mb-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-1.5 w-fit">
@@ -107,7 +164,14 @@ export default function MyAccount() {
         {activeTab === "Profile" && (
           <ProfileTab user={user} profile={profile} setProfile={setProfile} />
         )}
-        {activeTab === "My Stories" && <MyStoriesTab user={user} profile={profile} />}
+        {activeTab === "My Stories" && (
+          <MyStoriesTab
+            user={user}
+            profile={profile}
+            autoOpenWizard={autoOpenWizard}
+            onAutoOpenHandled={() => setAutoOpenWizard(false)}
+          />
+        )}
         {activeTab === "My Trips" && <MyTripsTab user={user} />}
       </div>
     </div>
@@ -202,12 +266,20 @@ function ProfileTab({ user, profile, setProfile }) {
 
 /* ---------------------------------- My Stories tab --------------------------------- */
 
-function MyStoriesTab({ user, profile }) {
+function MyStoriesTab({ user, profile, autoOpenWizard, onAutoOpenHandled }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+
+  useEffect(() => {
+    if (autoOpenWizard) {
+      setShowWizard(true);
+      onAutoOpenHandled?.();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoOpenWizard]);
 
   const loadMyPosts = async () => {
     setLoading(true);
@@ -238,7 +310,8 @@ function MyStoriesTab({ user, profile }) {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-emerald-600" /> Your stories
+            <BookOpen className="w-5 h-5 text-emerald-600" />
+            <SplitText text="Your stories" splitType="words" delay={60} duration={400} />
           </h2>
           <p className="text-sm text-gray-500 mt-0.5">
             Published stories appear on the homepage for other travellers to discover.
@@ -273,20 +346,24 @@ function MyStoriesTab({ user, profile }) {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {posts.map((post) => (
-            <button
+            <SpotlightCard
               key={post.id}
+              as="button"
               onClick={() => setSelectedPost(post)}
+              spotlightColor="rgba(16,185,129,0.28)"
               className="text-left rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={post.imageURL} alt={post.location} className="w-full h-32 object-cover" />
-              <div className="p-2">
-                <p className="text-xs font-medium text-gray-800 flex items-center gap-1">
-                  <MapPin className="w-3 h-3" /> {post.location}
-                </p>
-                <p className="text-xs text-gray-500 line-clamp-2 mt-1 whitespace-pre-line">{post.review}</p>
+              <div className="relative z-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={post.imageURL} alt={post.location} className="w-full h-32 object-cover" />
+                <div className="p-2">
+                  <p className="text-xs font-medium text-gray-800 flex items-center gap-1">
+                    <MapPin className="w-3 h-3" /> {post.location}
+                  </p>
+                  <p className="text-xs text-gray-500 line-clamp-2 mt-1 whitespace-pre-line">{post.review}</p>
+                </div>
               </div>
-            </button>
+            </SpotlightCard>
           ))}
         </div>
       )}
@@ -353,24 +430,28 @@ function MyTripsTab({ user }) {
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {trips.map((trip) => (
-          <button
+          <SpotlightCard
             key={trip.id}
+            as="button"
             onClick={() => setSelectedTrip(trip)}
+            spotlightColor="rgba(16,185,129,0.24)"
             className="text-left border border-gray-200 rounded-xl p-5 hover:shadow-md transition"
           >
-            <h3 className="font-semibold text-gray-900">{trip.title}</h3>
-            <p className="text-sm text-gray-500 mb-3">{trip.destination}</p>
-            <div className="flex items-center gap-4 text-xs text-gray-500">
-              <span className="flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5" />
-                {formatDate(trip.startDate)} – {formatDate(trip.endDate)}
-              </span>
-              <span className="flex items-center gap-1">
-                <IndianRupee className="w-3.5 h-3.5" />
-                {trip.totalBudget?.toLocaleString?.() || trip.totalBudget}
-              </span>
+            <div className="relative z-10">
+              <h3 className="font-semibold text-gray-900">{trip.title}</h3>
+              <p className="text-sm text-gray-500 mb-3">{trip.destination}</p>
+              <div className="flex items-center gap-4 text-xs text-gray-500">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {formatDate(trip.startDate)} – {formatDate(trip.endDate)}
+                </span>
+                <span className="flex items-center gap-1">
+                  <IndianRupee className="w-3.5 h-3.5" />
+                  {trip.totalBudget?.toLocaleString?.() || trip.totalBudget}
+                </span>
+              </div>
             </div>
-          </button>
+          </SpotlightCard>
         ))}
       </div>
 
