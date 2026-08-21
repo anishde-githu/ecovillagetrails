@@ -143,6 +143,13 @@
     iconEl.innerHTML = window.Icons ? window.Icons.get(info.icon, 15) : "";
     tempEl.textContent = Math.round(data.current.temperature_2m) + "°C";
     btn.style.display = "inline-flex";
+
+    // Cross-page trigger: the mobile dock's Weather item navigates here with
+    // #openWeather when the dock's page has no weather widget of its own.
+    if (location.hash === "#openWeather") {
+      history.replaceState(null, "", location.pathname + location.search);
+      openBroadcast();
+    }
   }
 
   /* ---------------------------------------------------------------

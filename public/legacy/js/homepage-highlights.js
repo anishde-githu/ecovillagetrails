@@ -122,6 +122,9 @@
             <strong>${escapeHtml(item.name)}</strong>
             <p>"${escapeHtml(item.expectation)}" vs. ${escapeHtml(item.reality)}</p>
             <span class="ecv-reality-hint">Tap the photo to flip →</span>
+            <button type="button" class="ecv-generate-plan-btn" data-destination="${escapeHtml(item.name)}">
+              ✨ Generate Travel Plan
+            </button>
           </div>
         </div>
       `
@@ -143,6 +146,14 @@
     mount.querySelectorAll(".ecv-reality-card").forEach((card) => {
       card.addEventListener("click", () => card.classList.toggle("is-flipped"));
     });
+    // The "Generate Travel Plan" button sits inside the flip card but must
+    // NOT trigger the flip — stop the click from bubbling to the card.
+    mount.querySelectorAll(".ecv-generate-plan-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (window.ECV_generateReport) window.ECV_generateReport(btn.dataset.destination);
+      });
+    });
   }
 
   /* ============================================================
@@ -153,12 +164,15 @@
     const slides = items
       .map(
         (item, i) => `
-        <div class="ecv-depth-slide${i === 0 ? " is-active" : ""}" data-i="${i}">
+        <div class="ecv-depth-slide${i === 0 ? " is-active" : ""}" data-i="${i}" data-destination="${escapeHtml(item.name)}">
           <img src="${escapeHtml(item.image || fallbackImg(item.name))}" alt="${escapeHtml(item.name)}" loading="lazy">
           <div class="ecv-depth-slide-info">
             <span class="ecv-depth-slide-time">🗓️ Best time: ${escapeHtml(item.bestTime)}</span>
             <h3>${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(item.tip)}</p>
+            <button type="button" class="ecv-generate-plan-btn ecv-generate-plan-btn-light" data-destination="${escapeHtml(item.name)}">
+              ✨ Generate Travel Plan
+            </button>
           </div>
         </div>
       `
@@ -207,6 +221,16 @@
     mount.querySelector(".ecv-depth-prev")?.addEventListener("click", () => goTo(current - 1));
     mount.querySelector(".ecv-depth-next")?.addEventListener("click", () => goTo(current + 1));
     dots.forEach((d) => d.addEventListener("click", () => goTo(Number(d.dataset.i))));
+
+    // Task 4: clicking a slide's "Generate Travel Plan" button opens the
+    // shared report modal for that destination — stopPropagation so it
+    // doesn't also register as a slide-navigation click.
+    mount.querySelectorAll(".ecv-depth-slide .ecv-generate-plan-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (window.ECV_generateReport) window.ECV_generateReport(btn.dataset.destination);
+      });
+    });
 
     let autoplay = setInterval(() => goTo(current + 1), 5000);
     stage.addEventListener("mouseenter", () => clearInterval(autoplay));

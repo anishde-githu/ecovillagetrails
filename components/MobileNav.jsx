@@ -11,14 +11,18 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Compass, Sparkles, Users, User } from "lucide-react";
+import { Home, Sparkles, Cloud, User, MessageCircle } from "lucide-react";
 
+// Task 9 spec: Home | AI Planner | Weather | My Account | Ask AI. Weather and
+// Ask AI live only on the legacy static site's widgets — from a Next.js page
+// there's nothing local to trigger, so these always hop over with a hash
+// that auto-opens the widget once index.html loads (see weather.js/main.js).
 const ITEMS = [
   { href: "/legacy/index.html", label: "Home", icon: Home },
-  { href: "/legacy/index.html#destinations", label: "Explore", icon: Compass },
-  { href: "/legacy/index.html#planner", label: "Plan", icon: Sparkles },
-  { href: "/legacy/index.html#community-experiences", label: "Community", icon: Users },
+  { href: "/legacy/index.html#planner", label: "AI Planner", icon: Sparkles },
+  { href: "/legacy/index.html#openWeather", label: "Weather", icon: Cloud },
   { href: "/my-account", label: "Account", icon: User },
+  { href: "/legacy/index.html#openAskAI", label: "Ask AI", icon: MessageCircle },
 ];
 
 const MAX_SCALE = 1.35;

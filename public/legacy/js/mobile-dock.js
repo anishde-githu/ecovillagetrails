@@ -16,18 +16,23 @@
 (function () {
   const ICONS = {
     home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
-    compass: '<circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6z"/>',
     sparkle: '<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/>',
-    users: '<circle cx="9" cy="8" r="3.2"/><path d="M2.5 19c.8-3.4 3.4-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/><circle cx="17.5" cy="9" r="2.4"/><path d="M15.5 13.4c2.3.4 4 1.9 4.6 4.6"/>',
+    cloud: '<path d="M7 16a4 4 0 0 1 .3-8 5 5 0 0 1 9.5 1.6A3.5 3.5 0 0 1 16 16H7z"/>',
     user: '<circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c1-4.2 4-6.4 7.5-6.4S18.5 15.8 19.5 20"/>',
+    chat: '<path d="M4 5h16v11H8l-4 4V5z"/>',
   };
 
+  // Task 9 spec: Home | AI Planner | Weather | My Account | Ask AI.
+  // Weather and Ask AI trigger the existing widgets in place when they're
+  // present on the current page (no reload); otherwise they hop to the
+  // homepage with a hash that auto-opens the widget once it lands there
+  // (see the matching hash checks added to weather.js and main.js).
   const ITEMS = [
     { key: "home", label: "Home", icon: "home", href: "/legacy/index.html" },
-    { key: "explore", label: "Explore", icon: "compass", href: "/legacy/index.html#destinations" },
-    { key: "plan", label: "AI Planner", icon: "sparkle", href: "/legacy/report.html" },
-    { key: "community", label: "Community", icon: "users", href: "/legacy/index.html#community-experiences" },
-    { key: "account", label: "Account", icon: "user", href: "/login" },
+    { key: "plan", label: "AI Planner", icon: "sparkle", href: "/legacy/index.html#planner" },
+    { key: "weather", label: "Weather", icon: "cloud", action: "weather" },
+    { key: "account", label: "My Account", icon: "user", href: "/login" },
+    { key: "ask-ai", label: "Ask AI", icon: "chat", action: "ask-ai" },
   ];
 
   function build() {
@@ -36,17 +41,22 @@
     dock.setAttribute("aria-label", "Mobile navigation");
 
     ITEMS.forEach((item) => {
-      const a = document.createElement("a");
-      a.className = "ecv-dock-item";
-      a.href = item.href;
-      a.dataset.key = item.key;
-      a.innerHTML = `
+      const el = document.createElement(item.action ? "button" : "a");
+      el.className = "ecv-dock-item";
+      if (item.action) {
+        el.type = "button";
+        el.addEventListener("click", () => handleAction(item.action));
+      } else {
+        el.href = item.href;
+      }
+      el.dataset.key = item.key;
+      el.innerHTML = `
         <span class="ecv-dock-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONS[item.icon]}</svg>
         </span>
         <span class="ecv-dock-label">${item.label}</span>
       `;
-      dock.appendChild(a);
+      dock.appendChild(el);
     });
 
     document.body.appendChild(dock);
@@ -55,9 +65,27 @@
     wireAccountLink(dock);
   }
 
+  function handleAction(action) {
+    if (action === "weather") {
+      const btn = document.getElementById("navWeatherBtn");
+      if (btn && btn.style.display !== "none") {
+        btn.click();
+      } else {
+        location.href = "/legacy/index.html#openWeather";
+      }
+    } else if (action === "ask-ai") {
+      const toggle = document.getElementById("askAiToggle");
+      if (toggle) {
+        toggle.click();
+      } else {
+        location.href = "/legacy/index.html#openAskAI";
+      }
+    }
+  }
+
   function markActive(dock) {
     const path = location.pathname.replace(/\/index\.html$/, "/").toLowerCase();
-    dock.querySelectorAll(".ecv-dock-item").forEach((el) => {
+    dock.querySelectorAll(".ecv-dock-item[href]").forEach((el) => {
       const href = el.getAttribute("href").split("#")[0].replace(/\/index\.html$/, "/").toLowerCase();
       if (href && path.endsWith(href.replace(/^\/legacy/, "").replace(/^\//, "/"))) {
         el.classList.add("is-active");
@@ -106,7 +134,7 @@
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           accountEl.href = "/my-account";
-          accountEl.querySelector(".ecv-dock-label").textContent = "Account";
+          accountEl.querySelector(".ecv-dock-label").textContent = "My Account";
         } else {
           accountEl.href = "/login";
           accountEl.querySelector(".ecv-dock-label").textContent = "Login";

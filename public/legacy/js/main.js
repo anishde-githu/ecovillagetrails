@@ -698,6 +698,13 @@ function openBookingModal(hotelId){
 
  if (toggle) toggle.addEventListener('click', () => setOpen(!floating.classList.contains('open')));
  if (close) close.addEventListener('click', () => setOpen(false));
+
+ // Cross-page trigger: the mobile dock's Ask AI item navigates here with
+ // #openAskAI when the dock's page has no Ask AI widget of its own.
+ if (location.hash === '#openAskAI') {
+ history.replaceState(null, '', location.pathname + location.search);
+ setOpen(true);
+ }
  if (form) {
  form.addEventListener('submit', async (e) => {
  e.preventDefault();

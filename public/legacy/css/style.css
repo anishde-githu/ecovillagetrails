@@ -336,6 +336,10 @@ h1,h2,h3,h4{
 @media (max-width:640px){
  .navbar{display:none;}
  body{padding-bottom:86px;}
+ /* Ask AI now lives in the mobile dock (see js/mobile-dock.js) — the
+    floating round button would otherwise sit on top of the dock. The panel
+    itself still opens fine; the dock's "Ask AI" item calls toggle.click(). */
+ .ask-ai-toggle{display:none;}
 }
 .ecv-dock{
  display:none;
@@ -371,6 +375,8 @@ h1,h2,h3,h4{
  transition:transform .18s cubic-bezier(.34,1.56,.64,1), color .2s ease;
  transform-origin:bottom center;
  will-change:transform;
+ /* reset for the two dock items (Weather, Ask AI) that render as <button> */
+ background:none;border:none;font:inherit;cursor:pointer;
 }
 .ecv-dock-icon{width:22px;height:22px;}
 .ecv-dock-icon svg{width:100%;height:100%;}
@@ -1141,7 +1147,7 @@ footer{
 .ask-ai-form textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(31,138,90,.12);} 
 .ask-ai-form button{border:none;border-radius:999px;padding:10px 14px;background:var(--orange);color:#fff;cursor:pointer;font-weight:600;} 
 .ask-ai-form button:hover{opacity:.92;} 
-@media (max-width:640px){ .ask-ai-floating{right:12px;bottom:12px;} }
+@media (max-width:640px){ .ask-ai-floating{right:12px;bottom:100px;} }
 
 /* ============================================================
  MODAL
@@ -1822,3 +1828,65 @@ h2 .h-icon, .section-title .h-icon{ vertical-align:-4px; margin-right:8px; }
  .ecv-depth-slide.is-prev,.ecv-depth-slide.is-next{opacity:0;pointer-events:none;}
  .ecv-depth-arrow{width:38px;height:38px;margin:0 6px;}
 }
+
+/* ============================================================
+ SHARED AI TRAVEL REPORT MODAL (js/ai-report.js)
+ One report UI used by every entry point — Real vs Reality's "Generate
+ Travel Plan", Plan Your Visit cards, and future ones. Reuses .atc-card
+ etc. from calendar.css so it's visually identical to the AI Planner.
+============================================================ */
+.ecv-report-modal-box{max-width:760px;max-height:86vh;overflow-y:auto;}
+.ecv-report-header{padding-right:36px;margin-bottom:18px;}
+.ecv-report-header h3{font-size:1.5rem;margin:0 0 4px;color:var(--ink);}
+.ecv-report-header p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+.ecv-report-loading{
+ padding:60px 20px;text-align:center;color:var(--ink-soft);font-size:14.5px;
+}
+
+.ecv-book-explore .atc-card-head span:first-child{font-weight:700;}
+.ecv-book-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+ gap:12px;
+}
+.ecv-book-loading{color:var(--ink-soft);font-size:13.5px;padding:8px 0;grid-column:1/-1;}
+.ecv-book-card{
+ background:var(--bg-alt);
+ border:1px solid var(--line);
+ border-radius:14px;
+ padding:14px 16px;
+}
+.ecv-book-card-tag{display:block;font-size:11.5px;font-weight:700;color:var(--green-deep);margin-bottom:6px;letter-spacing:.02em;}
+.ecv-book-card p{margin:0 0 4px;font-size:13.5px;color:var(--ink);font-weight:600;}
+.ecv-book-guidance{font-weight:400 !important;color:var(--ink-soft) !important;font-size:12.5px !important;}
+.ecv-book-placeholder{
+ background:repeating-linear-gradient(135deg, var(--bg-alt), var(--bg-alt) 10px, #fff 10px, #fff 20px);
+ border-style:dashed;
+}
+.ecv-book-placeholder p{font-weight:400;color:var(--ink-soft);font-size:12.5px;}
+
+@media (max-width:640px){
+ .ecv-report-modal-box{max-width:calc(100vw - 24px);}
+ .ecv-book-grid{grid-template-columns:1fr;}
+}
+
+/* "Generate Travel Plan" buttons — Real vs Reality cards (Task 3) and Plan
+   Your Visit cards (Task 4), both funnel into js/ai-report.js. */
+.ecv-generate-plan-btn{
+ margin-top:10px;
+ width:100%;
+ padding:9px 14px;
+ border:none;border-radius:12px;
+ background:linear-gradient(135deg, var(--green), var(--green-deep));
+ color:#fff;font-size:12.5px;font-weight:700;
+ cursor:pointer;
+ transition:transform .15s ease, box-shadow .15s ease;
+}
+.ecv-generate-plan-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(15,92,61,.5);}
+.ecv-generate-plan-btn-light{
+ margin-top:12px;width:auto;
+ background:rgba(255,255,255,.18);
+ backdrop-filter:blur(6px);
+ border:1px solid rgba(255,255,255,.35);
+}
+.ecv-generate-plan-btn-light:hover{background:rgba(255,255,255,.28);}
